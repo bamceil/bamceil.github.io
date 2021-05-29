@@ -1,0 +1,1894 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+    <title type="text">Bamceil</title>
+    <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
+    <updated>2021-05-29T13:55:24&#43;08:00</updated>
+    <id>https://bamceil.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://bamceil.github.io/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://bamceil.github.io/atom.xml" />
+    <author>
+            <name>bamceil</name>
+            <uri>https://bamceil.github.io/</uri>
+            
+                <email>bamceil@outlook.com</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    <generator uri="https://gohugo.io/" version="0.83.1">Hugo</generator>
+        <entry>
+            <title type="text">形式化方法期末考试（1）2019 春</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_final-test1/" />
+            <id>https://bamceil.github.io/posts/formal-methods_final-test1/</id>
+            <updated>2021-05-29T13:19:49&#43;08:00</updated>
+            <published>2021-05-27T17:47:20&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">证明： $$ (P \vee Q) \to (Q \vee P) $$ 证明： 1 2 3 4 5 6 7 8 ------------------------- (var) ---------------------- (var) P\/Q, P |- P P\/Q, P |- P --------------------- (var) ------------------------- (\/ I2) ---------------------- (\/……</summary>
+            
+                <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;证明： $$ (P \vee Q) \to (Q \vee P) $$&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;                            ------------------------- (var)    ---------------------- (var)
+                                  P\/Q, P |- P                      P\/Q, P |- P
+--------------------- (var) ------------------------- (\/ I2)  ---------------------- (\/ I1)
+   (P\/Q) |- (P\/Q)              P\/Q, P |- Q\/P                   P\/Q, Q |- Q\/P
+------------------------------------------------------------------------------------- (\/ E)
+                                  (P\/Q) |- (Q\/P)
+------------------------------------------------------------------------------------- (-&amp;gt; I)
+                                  (P\/Q) -&amp;gt; (Q\/P)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;em&gt;Given the following exclusive middle law (EM):&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ \vdash P \vee \neg P $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Does this rule hold in constructive logic? Explain your conclusion. (Only write down your idea, no need to write down strict proof.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;该定理在构造逻辑上不成立，原因在于构造逻辑必须要求证明能够构造出一个具体的实例出来。如果使用排中律证明成功，但却无法构造一个实例，那么仍然无法证明其存在。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;em&gt;Converting the following proposition into CNF:&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ P = p_1 \wedge \neg (p_2 \vee p_3) \vee \neg p_4 $$&lt;/p&gt;
+&lt;p&gt;转换为&lt;code&gt;NNF&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+F = C(P) &amp;amp;= C(p_1 \wedge \neg (p_2 \vee p_3) \vee \neg p_4) \\\&lt;br&gt;
+&amp;amp;= C(p_1) \wedge C(\neg(p_2 \vee p_3)) \vee C(\neg p_4) \\\&lt;br&gt;
+&amp;amp;= p_1 \wedge C(\neg (p_2 \vee p_3)) \vee \neg p_4 \\\&lt;br&gt;
+&amp;amp;= p_1 \wedge (C(\neg p_2) \wedge C(\neg p_3)) \vee \neg p_4 \\\&lt;br&gt;
+&amp;amp;= p_1 \wedge (\neg p_2 \wedge \neg p_3) \vee \neg p_4 \\\&lt;br&gt;
+&amp;amp;= p_1 \wedge \neg p_2 \wedge \neg p_3 \vee \neg p_4
+\end{align*}$$&lt;/p&gt;
+&lt;p&gt;转换为 &lt;code&gt;CNF&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+C(F) &amp;amp;= C((p_1 \wedge \neg p_2 \wedge \neg p_3) \vee \neg p_4) \\\&lt;br&gt;
+&amp;amp;= D(C(p_1 \wedge \neg p_2 \wedge \neg p_3), C(\neg p_4)) \\\&lt;br&gt;
+&amp;amp;= D(C(p_1) \wedge C(\neg p_2) \wedge C(\neg p_3), \neg p_4) \\\&lt;br&gt;
+&amp;amp;= D(p_1 \wedge \neg p_2 \wedge \neg p_3, \neg p_4) \\\&lt;br&gt;
+&amp;amp;= D(p_1, \neg p_4) \wedge D(\neg p_2, \neg p_4) \wedge D(\neg p_3, \neg p_4) \\\&lt;br&gt;
+&amp;amp;= (p_1 \vee \neg p_4) \wedge (\neg p_2 \vee \neg p_4) \wedge (\neg p_3 \vee \neg p_4)
+\end{align*}$$&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;em&gt;Try to check the satisfiability of&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ (\neg p_1 \vee \neg p_3) \wedge (p_2 \vee p_4) \wedge (p_2 \vee \neg p_3) $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;via DPLL. (Draw up the detail DPLL steps.) To speed up the DPLL algorithm, we entioned a concurrent version of DPLL, briefly explain why DPLL can utilize concurrency to speed up its calculation.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;令 $p_1 = \top$，原式化为 $\neg p_3 \wedge (p_2 \vee p_4) \wedge (p_2 \vee \neg p_3)$&lt;/li&gt;
+&lt;li&gt;令 $p_2 = \top$，原式化为 $\neg p_3$&lt;/li&gt;
+&lt;li&gt;令 $p_3 = \top$，原式化为 $\bot$&lt;/li&gt;
+&lt;li&gt;令 $p_3 = \bot$，原式化为 $\top$&lt;/li&gt;
+&lt;li&gt;程序结束，该式是可满足的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为我们可以在每一步都将 $p_i = \top$ 和 $p_i = \bot$ 同时进行计算，两者并不干涉对方的运算和结果。只要有一个返回 $\top$，程序就结束。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;电路图略&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ \begin{align*}
+F_1 &amp;amp;= A \wedge B \\\&lt;br&gt;
+F_2 &amp;amp;= F_1 \wedge \neg C \\\&lt;br&gt;
+F_3 &amp;amp;= F_1 \wedge \neg D
+\end{align*} $$&lt;/p&gt;
+&lt;p&gt;最终结果为：&lt;/p&gt;
+&lt;p&gt;$$ F = F_2 \vee F_3 $$&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;em&gt;While learning predicate logic, Bob found that Z3 supports a theory T which is undecidable. Bob also found that when he send some T formulae to Z3, Z3 will reply various result: SAT, UNSAT or UNKNOW. Try to explain why Z3 may generate these results.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当&lt;code&gt;z3&lt;/code&gt;发现有使输入成立的答案时，输出&lt;code&gt;SAT&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;当&lt;code&gt;z3&lt;/code&gt;发现没有使输入成立的答案时，输出&lt;code&gt;UNSAT&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;由于某些输入的检查范围可能过大，例如整个的自然数集合，&lt;code&gt;z3&lt;/code&gt;可能会超时或者资源不足（内存等）返回 &lt;code&gt;UNKNOW&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;em&gt;One important application of the EUF theory is proving program equivalence. In the following,we present two implementations of the same algorithm, one is:&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;power3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+   &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+   &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;and the other one is:&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;power3_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+   &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+   &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;With EUF, we can prove these two algorithms are equivalent by proving this proposition is valid:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$ P_1 \wedge P_2 \to out\_a == out\_b $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The proving code with Z3 looks like:&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DeclareSort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;S&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Consts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;inp out_a_0 out_a_1 out_a_2 out_b&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;f&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;P1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;And&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_a_0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_a_0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;P2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;And&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;solve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Implies&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;And&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;P2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;and the ouput is:&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[out_a_1 = S!val!2,
+ out_a_2 = S!val!1,
+ out_b = S!val!0,
+ inp = S!val!3,
+ out_a_0 = S!val!5,
+ f = [(S!val!5, S!val!3) -&amp;gt; S!val!6,
+      (S!val!3, S!val!3) -&amp;gt; S!val!7,
+      (S!val!7, S!val!3) -&amp;gt; S!val!8,
+      else -&amp;gt; S!val!4]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;Questions:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why the out_b and out_a_2 are not equal in the ouput?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;solve(Implies(And(P1, P2), out_b == out_a_2)) 可以用来保证 $$P_1 \wedge P_2 \to out\_a\_2 == out\_b$$ 成立。但是，这不一定能够保证 &lt;code&gt;out_b == out_a_2&lt;/code&gt;，例如：$P_1 = \bot, \quad P_2 = \top$ 有 $\bot \to anything$ 成立，自然可以将&lt;code&gt;anything&lt;/code&gt; 替换为 &lt;code&gt;out_b != out_a_2&lt;/code&gt;。（蕴含式左侧只要为 $\bot$，那么右侧无论什么，整个蕴含式都成立。）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Does the code prove the equivalence of two programs? If so, give the reason. If not, give the reason and the correct solution (just write down your idea, no need to write code).&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不可以。因为&lt;code&gt;z3&lt;/code&gt;只会在找到一个可满足的情况时停止，但无法保证对于每一种情况都相等。但函数需要保证对于每一种相同的输入都产生相同的输出，因此根据 &lt;code&gt;valid(P) == unsat(~P)&lt;/code&gt; 原则，应该改为 &lt;code&gt;solve(Not(Implies(And(P1, P2), out_b == out_a_2)))&lt;/code&gt;，输出 &lt;code&gt;unsat&lt;/code&gt; 即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法期中考试（1）2020 秋</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_middle-test/" />
+            <id>https://bamceil.github.io/posts/formal-methods_middle-test/</id>
+            <updated>2021-05-28T15:57:34&#43;08:00</updated>
+            <published>2021-05-26T15:23:16&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">证明： $$ (P \wedge Q) \vdash P \to Q $$ 证明： 1 2 3 4 5 6 --------------------- (var) (P/\Q), P |- P/\Q --------------------- (/\ E2) (P/\Q), P |- Q --------------------- (-&amp;gt; I) (P/\Q) |- P-&amp;gt;Q 证明……</summary>
+            
+                <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;证明： $$ (P \wedge Q) \vdash P \to Q $$&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--------------------- (var)
+  (P/\Q), P |- P/\Q
+--------------------- (/\ E2)
+   (P/\Q), P |- Q
+--------------------- (-&amp;gt; I)
+   (P/\Q) |- P-&amp;gt;Q
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;证明： $$ \vdash (P \vee Q) \to (\neg Q \to P) $$&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;                                                              --------------------- (var) ---------------------- (var)
+                                                                (P\/Q), ~Q, Q |- Q          (P\/Q), ~Q, Q |- ~Q
+                                                              -------------------------------------------------- (~ E)
+                                                                                (P\/Q), ~Q, Q |- FALSE
+------------------------ (var)  ----------------------- (var) -------------------------------------------------- (FALSE E)
+   (P\/Q), ~Q |- P\/Q              (P\/Q), ~Q, P |- P                             (P\/Q), ~Q, Q |- P
+---------------------------------------------------------------------------------------------------------------- (\/ E)
+                                              (P\/Q), ~Q |- P
+---------------------------------------------------------------------------------------------------------------- (-&amp;gt; I)
+                                             (P\/Q) |- (~Q-&amp;gt;P)
+---------------------------------------------------------------------------------------------------------------- (-&amp;gt; I)
+                                            |- (P\/Q) -&amp;gt; (~Q-&amp;gt;P)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;证明： 存在无理数 $p,\ q$ 使得 $p^q$ 是有理数&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;证明：令 $p = q = \sqrt{2}$，则 $p^q = (\sqrt{2})^{\sqrt{2}}$&lt;/p&gt;
+&lt;p&gt;考虑下面两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$(\sqrt{2})^{\sqrt{2}}$ 是有理数，证毕。&lt;/li&gt;
+&lt;li&gt;$(\sqrt{2})^{\sqrt{2}}$ 是无理数，令 $p = (\sqrt{2})^{\sqrt{2}}, q = \sqrt{2}$，则 $p^q = ((\sqrt{2})^{\sqrt{2}})^{\sqrt{2}} = (\sqrt{2})^2 = 2$，证毕。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;这是按照构造主义来证明的吗？谈谈你的看法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不是，构造主义要求必须找出具体的值来，而证明并没有构造一个值。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;存在命题 $$ F = \neg (p \to (q \wedge (\neg p \to q))) $$&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;消除蕴含式&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$\begin{align*}
+C(F) &amp;amp;= C(\neg (p \to (q \wedge (\neg p \to q)))) \\\&lt;br&gt;
+&amp;amp;= \neg (C(p \to (q \wedge (\neg p \to q)))) \\\&lt;br&gt;
+&amp;amp;= \neg (\neg C(p) \vee C(q \wedge (\neg p \to q))) \\\&lt;br&gt;
+&amp;amp;= \neg (\neg p \vee (C(q) \wedge C(\neg p \to q))) \\\&lt;br&gt;
+&amp;amp;= \neg (\neg p \vee (q \wedge (\neg C(\neg p) \vee C(q)))) \\\&lt;br&gt;
+&amp;amp;= \neg (\neg p \vee (q \wedge (\neg \neg p \vee q)))
+\end{align*}$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;转换为 NNF&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$ F = \neg (\neg p \vee (q \wedge (\neg \neg p \vee q))) $$&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;$$\begin{align*}
+C(F) &amp;amp;= C(\neg (\neg p \vee (q \wedge (\neg \neg p \vee q)))) \\\&lt;br&gt;
+&amp;amp;= C(\neg (\neg p)) \wedge C(\neg (q \wedge (\neg \neg p \vee q))) \\\&lt;br&gt;
+&amp;amp;= p \wedge (C(\neg q) \vee C(\neg (\neg \neg p \vee q))) \\\&lt;br&gt;
+&amp;amp;= p \wedge (\neg q \vee (C(\neg \neg \neg p) \wedge C(\neg q))) \\\&lt;br&gt;
+&amp;amp;= p \wedge (\neg q \vee (\neg p \wedge \neg q))
+\end{align*}$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;转换为 CNF&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$ F = p \wedge (\neg q \vee (\neg p \wedge \neg q)) $$&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;$$\begin{align*}
+C(F) &amp;amp;= C(p \wedge (\neg q \vee (\neg p \wedge \neg q))) \\\&lt;br&gt;
+&amp;amp;= C(p) \wedge C(\neg q \vee (\neg p \wedge \neg q)) \\\&lt;br&gt;
+&amp;amp;= p \wedge (D(C(\neg q), C(\neg p \wedge \neg q))) \\\&lt;br&gt;
+&amp;amp;= p \wedge (D(\neg q, C(\neg p \wedge \neg q))) \\\&lt;br&gt;
+&amp;amp;= p \wedge (D(\neg q, \neg p \wedge \neg q)) \\\&lt;br&gt;
+&amp;amp;= p \wedge (D(\neg q, \neg p) \wedge D(\neg q, \neg q)) \\\&lt;br&gt;
+&amp;amp;= p \wedge (\neg q \vee \neg p) \wedge (\neg q \vee \neg q) \\\&lt;br&gt;
+&amp;amp;= p \wedge (\neg q \vee \neg p) \wedge \neg q
+\end{align*}$$&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;DPLL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;newF&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;BCP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;newF&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;newF&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unsat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;select_var&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;newF&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DPLL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;newF&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DPLL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;newF&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;code&gt;BCP()&lt;/code&gt; method stands for &lt;strong&gt;Boolean Constraint Propagation&lt;/strong&gt;, which is based on unit resolution. Unit resolution deals with one unit clause, which must be p or ~p, and one clause contains the negation of the unit clause.&lt;/p&gt;
+&lt;p&gt;Suppose we call the function &lt;code&gt;DPLL()&lt;/code&gt; with the following proposition &lt;code&gt;F&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;$$ F = (\neg p_1 \vee p_3) \wedge (\neg p_2 \vee p_3 \vee p_4) \wedge (p_1 \vee \neg p_3 \vee \neg p_4) \wedge (p_1) $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For the first recursive call, on line 2 of &lt;code&gt;DPLL()&lt;/code&gt;, what&#39;s the value for &lt;code&gt;newF&lt;/code&gt;?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$ newF = p_3 \wedge (\neg p_2 \vee p_3 \vee p_4)  $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For the first recursive call, which variable you&#39;ll choose at line 8 of the &lt;code&gt;DPLL()&lt;/code&gt; function?&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;选择了 $p_1$，因为 $p_1$ 在整个命题的最后子命题中作为原子命题存在。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;What&#39;s the final result for the function &lt;code&gt;DPLL()&lt;/code&gt;? Is the proposition &lt;code&gt;F&lt;/code&gt; satisfiable or not?&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;DPLL&lt;/code&gt;的最终结果代表 $F$ 是否有使其能够成立的取值。对于本题而言 $F$ 是可以满足的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Alice 必须坐在一个凳子上：
+$$ A = (A_1 \wedge \neg A_2 \wedge \neg A_3) \vee (\neg A_1 \wedge A_2 \wedge \neg A_3) \vee (\neg A_1 \wedge \neg A_2 \wedge A_3)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bob 必须坐在一个凳子上：
+$$ B = (B_1 \wedge \neg B_2 \wedge \neg B_3) \vee (\neg B_1 \wedge B_2 \wedge \neg B_3) \vee (\neg B_1 \wedge \neg B_2 \wedge B_3)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Carol 必须坐在一个凳子上：
+$$ C = (C_1 \wedge \neg C_2 \wedge \neg C_3) \vee (\neg C_1 \wedge C_2 \wedge \neg C_3) \vee (\neg C_1 \wedge \neg C_2 \wedge C_3)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一个椅子上只能坐一个人：
+$$ F_1 = (A_1 \wedge \neg B_1 \wedge \neg C_1) \vee (\neg A_1 \wedge B_1 \wedge \neg C_1) \vee (\neg A_1 \wedge \neg B_1 \wedge C_1) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二个椅子上坐一个人：
+$$ F_2 = (A_2 \wedge \neg B_2 \wedge \neg C_2) \vee (\neg A_2 \wedge B_2 \wedge \neg C_2) \vee (\neg A_2 \wedge \neg B_2 \wedge C_2) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第三个椅子上只能坐一个人：
+$$ F_3 = (A_3 \wedge \neg B_3 \wedge \neg C_3) \vee (\neg A_3 \wedge B_3 \wedge \neg C_3) \vee (\neg A_3 \wedge \neg B_3 \wedge C_3) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Alice 不能坐在 Carol 旁边：
+$$ F_4 = (A_1 \to \neg C_2) \wedge (A_2 \to \neg (C_1 \vee C_3)) \wedge (A_3 \to \neg C_2) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本答案假设1在最左边，3在最右边。  （左）1 ---- 2 ---- 3 （右）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Bob不能坐在 Alice 右边：
+$$ F_5 = (B_1 \to \neg A_2) \wedge (B_1 \to \neg A_3) \wedge (B_2 \to \neg A_3) $$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则有约束条件如下：&lt;/p&gt;
+&lt;p&gt;$$ F = A \wedge B \wedge C \wedge F_1 \wedge F_2 \wedge F_3 \wedge F_4 \wedge F_5 $$&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;证明：$$ \forall x.(P(x) \to Q(x)) \vdash \forall x.(P(x)) \to \forall x.(Q(x)) $$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bamceil.github.io/image/prove3.png&#34; alt=&#34;prove3&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ F = \exists x.(P(y, x) \wedge \forall y.(\neg Q(y, x)) \vee P(y, z)) $$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自由变量： $ \lbrace y,\ z \rbrace $&lt;/li&gt;
+&lt;li&gt;绑定变量： $ \lbrace x,\ y \rbrace $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$\begin{align*}
+F[y \mapsto x] &amp;amp;= \exists x.(P(y, x) \wedge \forall y.(\neg Q(y, x)) \vee P(y, z)) [y \mapsto x] \\\&lt;br&gt;
+&amp;amp;= \exists t.(P(y, t) \wedge \forall y.(\neg Q(y, t)) \vee P(y, z)) [y \mapsto x] \\\&lt;br&gt;
+&amp;amp;= \exists t.(P(y, t) \wedge \forall s.(\neg Q(s, t)) \vee P(y, z)) [y \mapsto x] \\\&lt;br&gt;
+&amp;amp;= \exists t.(P(x, t) \wedge \forall s.(\neg Q(s, t)) \vee P(x, z))
+\end{align*}$$&lt;/p&gt;
+&lt;p&gt;考虑到 $x$ 是绑定变量，因此 $F[x \mapsto R(y, z)]$ 的结果应该保持不变。&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ a = c, b = d, a = e, d = h, f = g, g = e $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If we use the Union-Find algorithm to solve these qualities, what does the data structure look like? Please draw some sketches. (You don&#39;t need to write down the algorithm details.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bamceil.github.io/image/q1.png&#34; alt=&#34;q1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Suppose we add another equality&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$e = d$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;into this group, what does the data structure look like, after we use union-find algorithm to solve these equalities?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bamceil.github.io/image/q2.png&#34; alt=&#34;q2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;calculate_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;calculate_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;Please describe the basic idea to prove these two algorithms are equivalent, by using &lt;code&gt;EUF&lt;/code&gt; theory. Please write down the logical proposition &lt;code&gt;F&lt;/code&gt; you need to prove.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;基本原则就是：证明对于任意的相同输入，两者产生相同的输出。由于输入的范围过大，无法构造证明，因此，只需要证明其反命题是不可满足的即可。&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+F ::=\ \ \ &amp;amp;(outa1 = f(in1, in2) \\\&lt;br&gt;
+\wedge \ &amp;amp;outa2 = h(in1, in2) \\\&lt;br&gt;
+\wedge \ &amp;amp;outa = g(outa1, outa2) \\\&lt;br&gt;
+\wedge \ &amp;amp;g(f(in1, in2), h(in1, in2)) = outb) \to (outa = outb)
+\end{align*} $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$f$ 代表乘法操作， $h$ 代表加法操作， $g$ 代表减法操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Bob wants to prove the above proposition &lt;code&gt;F&lt;/code&gt;, by using the Z3 solver, the code he wrote looks like:&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;solver&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Solver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;solver&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;solver&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个代码无法证明两者等价。正确代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;solver&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Solver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;solver&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Not&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;solver&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法（6）</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_6/" />
+            <id>https://bamceil.github.io/posts/formal-methods_6/</id>
+            <updated>2021-05-26T15:15:17&#43;08:00</updated>
+            <published>2021-05-25T18:33:16&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">SAT可以用来回答命题逻辑中的一些可满足性问题，例如：$P \vee Q \wedge R$ 但是实际现实中的问……</summary>
+            
+                <content type="html">&lt;p&gt;&lt;code&gt;SAT&lt;/code&gt;可以用来回答命题逻辑中的一些可满足性问题，例如：$P \vee Q \wedge R$&lt;/p&gt;
+&lt;p&gt;但是实际现实中的问题却是这样的：$ (a + b &amp;lt; c) \wedge (c + k &amp;gt; d) \vee (c = f(a) + b)$，这样的问题的可满足性该如何回答？&lt;/p&gt;
+&lt;p&gt;从逻辑上来看，这里出现了很多逻辑系统中不包含的符号，为了解决这类问题，必须首先知道他们的意思。&lt;/p&gt;
+&lt;p&gt;因此，引入术语&lt;strong&gt;理论（Theory）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;理论用于对符号赋予含义。&lt;/li&gt;
+&lt;li&gt;理论定义一系列的公理，以及使用公理可以推导出的结论。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;粗略的看，一个理论就是构建了一个完整的系统，该系统是特化的，只为用来解决某些问题。从这个角度来看，逻辑更像是一种模板，它抽象出了一套核心，只要有需要，就可以重新解释逻辑，形成一个新的理论。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;smt&#34;&gt;SMT&lt;/h2&gt;
+&lt;p&gt;可满足性模理论（Satisfiability Modulo Theories，SMT），是指给定一组理论，根据给定背景逻辑，求在该组理论解释下公式的可满足性。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SMT = SAT + Theory&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;比如说：EUF（Equality with Uninterpreted Functions）&lt;/p&gt;
+&lt;p&gt;下面的命题可以满足吗？&lt;/p&gt;
+&lt;p&gt;$$ a = b \wedge b = (c - 2) \wedge A[f(a)] = A[f(c-2)] $$&lt;/p&gt;
+&lt;p&gt;首先应用等式理论（Equality Theory）：&lt;/p&gt;
+&lt;p&gt;$$ 𝐴[𝑓(𝑐−2)]=𝐴[𝑓(𝑐−2)] $$&lt;/p&gt;
+&lt;p&gt;然后应用未解释函数理论（Uninterpreted Function Theory）：&lt;/p&gt;
+&lt;p&gt;$$ 𝐴[𝑣]=𝐴[𝑣] $$&lt;/p&gt;
+&lt;p&gt;最后应用数组理论（Array Theory）可以知道该问题是可以满足的。&lt;/p&gt;
+&lt;h2 id=&#34;eufequality-with-uninterpreted-functions&#34;&gt;EUF（Equality with Uninterpreted Functions）&lt;/h2&gt;
+&lt;p&gt;上面简单介绍了&lt;code&gt;EUF&lt;/code&gt;的例子，这里给出系统的定义。&lt;/p&gt;
+&lt;h3 id=&#34;文法&#34;&gt;文法&lt;/h3&gt;
+&lt;p&gt;$$ \begin{align*}
+E &amp;amp;::= x \ | \ c \ | \ f(E,\ \dots,\ E) \\\\&lt;br&gt;
+R &amp;amp;::= E = E \ | \ E \neq E \\\\&lt;br&gt;
+P &amp;amp;::= R \ | \ P \wedge P
+\end{align*} $$&lt;/p&gt;
+&lt;h4 id=&#34;示例1&#34;&gt;示例1&lt;/h4&gt;
+&lt;p&gt;$$ a = b \wedge b = c \wedge d = e \wedge b = s \wedge d = t \wedge a \neq e \wedge a \neq s $$&lt;/p&gt;
+&lt;p&gt;为了判断上面的命题是否可以满足，这里使用如下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;由于 $a = b$，构建一个集合 $M = \lbrace a,\ b \rbrace$&lt;/li&gt;
+&lt;li&gt;由于 $b = c$，将 $c$ 加入 $b$ 的集合，此时 $M = \lbrace a,\ b,\ c \rbrace$&lt;/li&gt;
+&lt;li&gt;重复如上步骤，得到集合 $M = \lbrace a,\ b,\ c,\ s \rbrace, \quad N = \lbrace d,\ e,\ t \rbrace$&lt;/li&gt;
+&lt;li&gt;对于 $a \neq e$ 由于 $a,\ e$ 不在同一个集合中，显然成立。&lt;/li&gt;
+&lt;li&gt;对于 $a \neq s$ 由于 $a,\ s$ 在同一个集合中，这表明出现了矛盾。因此该命题无法满足。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以总结出如下算法 (Naïve algorithm)：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;n&#34;&gt;decideEquality&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;x = y&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;union&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;x != y&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UNSAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;并查集的典型用法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;示例2&#34;&gt;示例2&lt;/h4&gt;
+&lt;p&gt;$$ a = b \wedge b = c \wedge d = e \wedge b = s \wedge d = t \wedge f(a,\ g(d)) \neq f(b,\ g(e)) $$&lt;/p&gt;
+&lt;p&gt;同样使用上面的并查集算法，将函数 $f,\ g$ 和其他元素作同样的考虑。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按照上例中同样的方法，构建集合 $ M = \lbrace a,\ b,\ c,\ s \rbrace, \quad N = \lbrace d,\ e,\ t \rbrace $&lt;/li&gt;
+&lt;li&gt;由于 $d,\ e$ 在同一集合，所以 $g(d) = g(e)$，现在有集合 $F = \lbrace g(d),\ g(e) \rbrace$&lt;/li&gt;
+&lt;li&gt;由于 $a = b,\ g(d) = g(e)$，可以推知 $ f(a,\ g(d)) = f(b,\ g(e)) $，即有集合 $ K = \lbrace f(a,\ g(d)),\ f(b,\ g(e)) \rbrace $&lt;/li&gt;
+&lt;li&gt;出现矛盾，因此，该命题无法满足。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将算法扩充，使其可用于&lt;code&gt;Uninterpreted Functions&lt;/code&gt; (Naïve algorithm)：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-csharp&#34; data-lang=&#34;csharp&#34;&gt;&lt;span class=&#34;n&#34;&gt;decideEquality&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;x = y&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;union&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stillChanging&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// closure
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;s1 = t1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;sn = tn&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;union&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;t1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;x != y&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setx&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sety&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UNSAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;应用&#34;&gt;应用&lt;/h3&gt;
+&lt;p&gt;考虑下面两个函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;power3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;power3_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这两个函数是等价的，但是如何证明呢？&lt;/p&gt;
+&lt;p&gt;如果要证明这两个函数等价，我们只需要证明对于任何的相同的输入，他们的返回值相等即可。由于输入的可能性太多，证明所有的输入根本不可能。所以，我们反过来，只需要证明否命题是可满足的，那么原命题就是不成立的。&lt;/p&gt;
+&lt;p&gt;现在定义一些变量：&lt;/p&gt;
+&lt;p&gt;$$ in,\ outa,\ outa1,\ outa2,\ outb $$&lt;/p&gt;
+&lt;p&gt;这些变量和上面的函数变量一一对应。&lt;/p&gt;
+&lt;p&gt;定义函数：&lt;/p&gt;
+&lt;p&gt;$$f(x,\ y) = x * y$$&lt;/p&gt;
+&lt;p&gt;现在可以得出命题：&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+P ::=\ \ \ &amp;amp;in = outa \\\&lt;br&gt;
+\wedge \ &amp;amp;outa1 = f(outa,\ in) \\\&lt;br&gt;
+\wedge \ &amp;amp;outa2 = f(outa1,\ in) \\\&lt;br&gt;
+\wedge \ &amp;amp;outb = f(f(in,\ in),\ in) \\\&lt;br&gt;
+\\&lt;br&gt;
+Q ::=\ \ \ &amp;amp;P \to (outa2 = outb)
+\end{align*} $$&lt;/p&gt;
+&lt;p&gt;现在只需要证明： $ \neg Q $ 是不可满足的即可。&lt;/p&gt;
+&lt;p&gt;如果使用&lt;code&gt;python&lt;/code&gt;的&lt;code&gt;z3&lt;/code&gt;包，那么上面的问题有下列的代码可以运行得到答案：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;z3&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DeclareSort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;S&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;f&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Consts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;e out_a out_a_1 out_a_2 out_b&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;And&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_a_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;R&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Implies&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_a_2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;solve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Not&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;编译器在编译代码时，往往会将代码进行优化，并且之后会翻译为中间代码，那么编译器是如何确定代码等价性的呢？答案已经很明显了。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法（5）</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_5/" />
+            <id>https://bamceil.github.io/posts/formal-methods_5/</id>
+            <updated>2021-05-26T20:29:31&#43;08:00</updated>
+            <published>2021-05-23T16:55:36&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">历史发展 谓词逻辑最开始是从推理中产生的，因此它十分适合用于表达。 比如，我们有一个假设……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;历史发展&#34;&gt;历史发展&lt;/h2&gt;
+&lt;p&gt;谓词逻辑最开始是从推理中产生的，因此它十分适合用于表达。&lt;/p&gt;
+&lt;p&gt;比如，我们有一个假设：所有人都会吃饭。还有另一个事实：小明是人。那么我们可以得出结论：小明会吃饭。&lt;/p&gt;
+&lt;p&gt;这种表达十分容易理解，并且可以被形式化。&lt;/p&gt;
+&lt;p&gt;例如：设 $P(x)$ 代表 $x$ 是人， $Q(x)$ 代表 $x$ 会吃饭。那么上面的表达可以被形式化为：&lt;/p&gt;
+&lt;p&gt;$$\forall x. \ (P(x) \to Q(x))$$&lt;/p&gt;
+&lt;p&gt;那么仅需要将 $x$ 替换为小明，就可以表达同样的意思。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;谓词逻辑是命题逻辑的扩充&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;文法&#34;&gt;文法&lt;/h2&gt;
+&lt;p&gt;$$ \begin{align*} E &amp;amp;::= X \ | \ C \ | \ f(E, \ ..., \ E) \\\ \\&lt;br&gt;
+R &amp;amp;::= r(E, \ ..., \ E) \\\ \\&lt;br&gt;
+P &amp;amp;::= R \ | \ \top \ | \ \bot \ | \ P \vee P \ | \ P \wedge P \ | \ P \to P \ | \ \neg P \ | \ \forall x. P \ | \ \exists x. P \end{align*} $$&lt;/p&gt;
+&lt;p&gt;其中，$X$ 表示一系列的变量，$C$ 表示一系列的常量，$f$ 代表一系列的函数映射 $r$ 代表关系运算。&lt;/p&gt;
+&lt;p&gt;$Ex1. \quad r(f_1(x_1, x_2), f_2(x_3, x_4))$&lt;/p&gt;
+&lt;p&gt;该表达式符合文法，是合法的谓词逻辑。&lt;/p&gt;
+&lt;p&gt;$Ex2. \quad f_1(f_2(x_1, x_2), x_3)$&lt;/p&gt;
+&lt;p&gt;该表达式不符合文法，因此不是合法的谓词逻辑。&lt;/p&gt;
+&lt;h2 id=&#34;自由变量和绑定变量&#34;&gt;自由变量和绑定变量&lt;/h2&gt;
+&lt;p&gt;对于如下的命题：&lt;/p&gt;
+&lt;p&gt;$$\forall x. (S(x) \to T(x))$$&lt;/p&gt;
+&lt;p&gt;其中的 $x$ 会替换为给定的值。将该命题想象为一个密闭的盒子，其中只有 $x$ 是唯一和外部交流的通道。并且一旦获得一个具体的 $x$ 值，那么整个盒子就彻底封闭起来了，也就是说，之后该盒子发生的任何事都不受外界影响。因此称这类变量为&lt;strong&gt;绑定变量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对于另一个命题：&lt;/p&gt;
+&lt;p&gt;$$\forall x. \forall y. r(f(x, y), \ g(z))$$&lt;/p&gt;
+&lt;p&gt;这里出现了 $z$ 变量，和上面的相反，$z$ 变量会受到外界影响。即使给定了 $x, \ y$ 使得盒子封闭了起来，$z$ 还是会随着外部影响而改变。这种变量称为&lt;strong&gt;自由变量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;考虑下列&lt;code&gt;C&lt;/code&gt;语言中的函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;对于该函数而言，就相当于一个盒子，只要接收到&lt;code&gt;x&lt;/code&gt;和&lt;code&gt;y&lt;/code&gt;那么整个盒子就封闭了起来，但是&lt;code&gt;z&lt;/code&gt;仍然有可能改变。这也就意味着下列调用是有可能产生不同结果：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// do something...
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;// maybe k != z
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;特别是对于很多编程语言的&lt;code&gt;lambda&lt;/code&gt;表达式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;k&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;](){&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// z is reference, x is value copied. 
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;t1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lambda&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;t2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lambda&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;// maybe t1 != t2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;统计自由变量的算法&#34;&gt;统计自由变量的算法&lt;/h3&gt;
+&lt;p&gt;$$f(P) = \begin{cases} f(Q) \cup f(R), &amp;amp;\text{if} \ \ P = Q \wedge R \ | \ Q \vee R \ | \ Q \to R \\\ \\
+f(Q) - \lbrace x \rbrace, &amp;amp;\text{if} \ \ P = \forall x.\ Q \ | \ \exists x.\ Q \\\ \\&lt;br&gt;
+\bigcup\limits_{i=1}^{n} G(E_i), &amp;amp;\text{if} \ \ P = R(E_1, \ \dots, \ E_n)
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;$$ G(E) = \begin{cases} \lbrace x \rbrace, &amp;amp;\text{if} \ \ E = x \\\ \\&lt;br&gt;
+\phi, &amp;amp;\text{if} \ \ E = c \\\ \\&lt;br&gt;
+\bigcup\limits_{i=1}^{n} G(E_i), &amp;amp;\text{if} \ \ E = f(E_1, \ \dots, \ E_n)
+\end{cases} $$&lt;/p&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例&lt;/h4&gt;
+&lt;p&gt;$ Ex. \quad A = \exists x.\ (P(x,\ y) \vee \forall y.\ Q(x,\ y) \to R(x,\ z))$&lt;/p&gt;
+&lt;p&gt;过程如下：&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+f(A) &amp;amp;= f(\exists x.\ (P(x,\ y) \vee \forall y.\ Q(x,\ y) \to R(x,\ z))) \\\&lt;br&gt;
+&amp;amp;= f(P(x,\ y) \vee \forall y.\ Q(x,\ y) \to R(x,\ z)) - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= f(P(x,\ y) \vee \forall y.\ Q(x,\ y)) \cup f(R(x,\ z)) - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= f(P(x,\ y)) \cup f(\forall y.\ Q(x,\ y)) \cup \lbrace x,\ z \rbrace - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x,\ y \rbrace \cup (f(Q(x,\ y)) - \lbrace y \rbrace) \cup \lbrace x,\ z \rbrace - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x,\ y \rbrace \cup (\lbrace x,\ y \rbrace - \lbrace y \rbrace) \cup \lbrace x,\ z \rbrace - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x,\ y \rbrace \cup \lbrace x \rbrace \cup \lbrace x,\ z \rbrace - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x,\ y,\ z \rbrace - \lbrace x \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace y,\ z \rbrace
+\end{align*} $$&lt;/p&gt;
+&lt;h3 id=&#34;统计绑定变量的算法&#34;&gt;统计绑定变量的算法&lt;/h3&gt;
+&lt;p&gt;$$ f(P) = \begin{cases} \phi, &amp;amp;\text{if} \ \ P = r(E_1, \ \dots, \ E_n) \\\ \\&lt;br&gt;
+\phi, &amp;amp;\text{if} \ \ P = \top \ | \ \bot \\\ \\&lt;br&gt;
+f(R) \cup f(Q) &amp;amp;\text{if} \ \ P = Q \wedge R \ | \ Q \vee R \ | \ Q \to R \\\ \\&lt;br&gt;
+\lbrace x \rbrace \cup f(R) &amp;amp;\text{if} \ \ P = \forall x.\ R \ | \ \exists x.\ R
+\end{cases} $$&lt;/p&gt;
+&lt;h4 id=&#34;示例-1&#34;&gt;示例&lt;/h4&gt;
+&lt;p&gt;$ Ex. \quad A = \exists x.\ (P(x,\ y) \vee \forall y.\ Q(x,\ y) \to R(x,\ z))$&lt;/p&gt;
+&lt;p&gt;过程如下：&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+f(A) &amp;amp;= f(\exists x.\ (P(x,\ y) \vee \forall y.\ Q(x,\ y) \to R(x,\ z))) \\\&lt;br&gt;
+&amp;amp;= \lbrace x \rbrace \cup f(P(x,\ y) \vee \forall y.\ Q(x,\ y) \to R(x,\ z)) \\\&lt;br&gt;
+&amp;amp;= \lbrace x \rbrace \cup f(P(x,\ y) \vee \forall y.\ Q(x,\ y)) \cup f(R(x,\ z)) \\\&lt;br&gt;
+&amp;amp;= \lbrace x \rbrace \cup f(P(x,\ y)) \cup f(\forall y.\ Q(x,\ y)) \cup \lbrace \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x \rbrace \cup \lbrace \rbrace \cup f(\forall y.\ Q(x,\ y)) \cup \lbrace \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x \rbrace \cup \lbrace \rbrace \cup \lbrace y \rbrace \cup f(Q(x,\ y)) \cup \lbrace \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x \rbrace \cup \lbrace \rbrace \cup \lbrace y \rbrace \cup \lbrace \rbrace \cup \lbrace \rbrace \\\&lt;br&gt;
+&amp;amp;= \lbrace x,\ y \rbrace
+\end{align*} $$&lt;/p&gt;
+&lt;h3 id=&#34;变量替代算法&#34;&gt;变量替代算法&lt;/h3&gt;
+&lt;p&gt;$$ P[x \mapsto E] = \begin{cases} E, &amp;amp;\text{if} \ \ P = x \\\ \\&lt;br&gt;
+y, &amp;amp;\text{if} \ \ P = y \ \text{and} \ y \neq x \\\ \\&lt;br&gt;
+f(E_1[x \mapsto E], \ \dots, \ E_n[x \mapsto E]) &amp;amp;\text{if} \ \ P = f(E_1,\ \dots,\ E_n) \\\ \\&lt;br&gt;
+R(E_1[x \mapsto E], \ \dots, \ E_n[x \mapsto E]) &amp;amp;\text{if} \ \ P = R(E_1,\ \dots,\ E_n) \\\ \\&lt;br&gt;
+Q[x \mapsto E] \vee R[x \mapsto E], &amp;amp;\text{if} \ \ P = Q \vee R \\\ \\&lt;br&gt;
+Q[x \mapsto E] \wedge R[x \mapsto E], &amp;amp;\text{if} \ \ P = Q \wedge R \\\ \\&lt;br&gt;
+Q[x \mapsto E] \to R[x \mapsto E], &amp;amp;\text{if} \ \ P = Q \to R \\\ \\&lt;br&gt;
+\forall x.\ Q, &amp;amp;\text{if} \ \ P = \forall x.\ Q \\\ \\&lt;br&gt;
+\forall y.\ (Q[x \mapsto E]), &amp;amp;\text{if} \ \ P = \forall y.\ Q \\\ \\&lt;br&gt;
+\exists x.\ Q, &amp;amp;\text{if} \ \ P = \exists x.\ Q \\\ \\&lt;br&gt;
+\exists y.\ (Q[x \mapsto E]), &amp;amp;\text{if} \ \ P = \exists y.\ Q
+\end{cases} $$&lt;/p&gt;
+&lt;h4 id=&#34;示例-2&#34;&gt;示例&lt;/h4&gt;
+&lt;p&gt;$ Ex 1. $ 设存在命题 $$ F = \exists x.\ (P(y,\ x) \wedge P(y,\ z)) $$ 有下列替换规则 $$ F[x \mapsto R(x,\ y)] $$ 结果为？&lt;/p&gt;
+&lt;p&gt;解：因为 $x$ 是绑定变量，所以，替换之后的结果不变。&lt;/p&gt;
+&lt;p&gt;$ Ex 2. $ 设存在命题 $$ F = \exists x.\ (P(y,\ x) \wedge \forall y.\ (\neg Q(y,\ x)) \vee P(y,\ z)) $$ 给出使用替换规则 $$ F[y \mapsto x] $$ 的结果。&lt;/p&gt;
+&lt;p&gt;解：替换过程如下，&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*}
+F[y \mapsto x] &amp;amp;= (\exists x.\ (P(y,\ x) \wedge \forall y.\ (\neg Q(y,\ x)) \vee P(y,\ z)))[y \mapsto x] \\\&lt;br&gt;
+&amp;amp;= (\exists t.\ (P(y,\ t) \wedge \forall y.\ (\neg Q(y,\ t)) \vee P(y,\ z)))[y \mapsto x] \\\&lt;br&gt;
+&amp;amp;= (\exists t.\ (P(y,\ t) \wedge \forall s.\ (\neg Q(s,\ t)) \vee P(y,\ z)))[y \mapsto x] \\\&lt;br&gt;
+&amp;amp;= (\exists t.\ (P(x,\ t) \wedge \forall s.\ (\neg Q(s,\ t)) \vee P(x,\ z)))
+\end{align*} $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最终目的就是将自由变量 $y$ 替换为 $x$，中间存在的同名绑定变量必须换一个名字，以防冲突。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;变量捕获&#34;&gt;变量捕获&lt;/h3&gt;
+&lt;p&gt;$$ (\forall y.\ x)[x \mapsto z] = \forall y.\ (x[x \mapsto z]) = \forall y.\ z $$&lt;/p&gt;
+&lt;p&gt;现在考虑特殊情况，将所有的 $x$ 替换为 $y$，则有：&lt;/p&gt;
+&lt;p&gt;$$ (\forall y.\ x)[x \mapsto y] = \forall y.\ (x[x \mapsto y]) = \forall y.\ y $$&lt;/p&gt;
+&lt;p&gt;这是一个恒等式。&lt;/p&gt;
+&lt;p&gt;还有一个特殊的公式，称为 $\alpha$ 变换：&lt;/p&gt;
+&lt;p&gt;$$ \forall x.\ P \Leftrightarrow \forall u.\ (P[x \mapsto u]) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该规则其实可以看作是重命名规则，因为它将 $x$ 变成了 $u$，而整个公式的含义没有改变。上面的 $Ex2$ 就是一个例子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;自由变量：作用域内使用却未在该作用域内定义的变量&lt;/p&gt;
+&lt;p&gt;绑定变量：作用域内定义的变量&lt;/p&gt;
+&lt;p&gt;绑定：自由变量被转换为绑定变量&lt;/p&gt;
+&lt;p&gt;替换：作用域内的变量被替换成表达式&lt;/p&gt;
+&lt;p&gt;捕获：做变量替换时表达式中有变量与作用域内变量重名时，发生的情况。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;推导规则&#34;&gt;推导规则&lt;/h2&gt;
+&lt;p&gt;谓词逻辑的证明系统和命题逻辑一样，都是自然演绎。那么也同样存在一些推导规则：&lt;/p&gt;
+&lt;p&gt;$$ \frac{\Gamma,\ x \vdash P}{\Gamma \vdash \forall x.\ P }(\forall I) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一个引入定理，它将 $\forall$ 引入到结论中。实际上，假设中的 $x$ 相当于众多元素的集合，每个元素均满足 $P$ （也就是 $(x_1 \vdash P) \wedge \dots \wedge (x_n \vdash P)$）。而下面的 $\forall x$ 实际上是单独的拿出来了每个 $x_i$&lt;/p&gt;
+&lt;p&gt;举个例子：（假设）小明，小张都爱打篮球。（结论）小明爱打篮球，小张爱打篮球。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash \forall x.\ P}{\Gamma \vdash P[x \mapsto E] }(\forall E) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一个消去定理，它将 $\forall$ 从假设中消去。该定理表明：如果对任意的 $x$ 都满足 $P$，那么 $x$ 就可以从 $P$ 中替换掉。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P[x \mapsto E]}{\Gamma \vdash \exists x.\ P }(\exists I) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一个引入定理，它将 $\exists$ 引入到结论中。该定理表明：如果 $x$ 在 $P$ 中可以被替换，那么必然存在至少一个元素满足 $P$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash \exists x.\ P \quad \Gamma, x, P \vdash Q}{\Gamma \vdash Q }(\exists E) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一个消去定理，它将 $\exists$ 从假设中消去。该定理表明：如果在特定的 $x$ 条件下，可以使得 $P$ 成立，并且 $P$ 还可以推导出 $Q$。那么在此条件下（$x$ 不变），$Q$ 也将成立。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;示例-3&#34;&gt;示例&lt;/h3&gt;
+&lt;p&gt;$ Ex 1. \ Prove: \ \Gamma, \vdash \ \exists x.\ (P(x) \to \bot) \to (\forall x.\ P(x) \to \bot) $&lt;/p&gt;
+&lt;p&gt;$Proof.$
+&lt;img src=&#34;https://bamceil.github.io/image/prove1.png&#34; alt=&#34;prove1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;$ Ex 2. \ Prove: \ \Gamma, \vdash \ \forall x.\ (P(x) \to Q(x)) \to \exists x.\ P(x) \to \exists x.\ Q(x) $&lt;/p&gt;
+&lt;p&gt;$Proof.$
+&lt;img src=&#34;https://bamceil.github.io/image/prove2.png&#34; alt=&#34;prove2&#34;&gt;&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法（4）</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_4/" />
+            <id>https://bamceil.github.io/posts/formal-methods_4/</id>
+            <updated>2021-05-28T22:05:04&#43;08:00</updated>
+            <published>2021-05-22T19:47:55&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">SAT SAT（可满足性问题，Satisfiability）是第一个NPC问题，于1971……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;sat&#34;&gt;SAT&lt;/h2&gt;
+&lt;p&gt;SAT（可满足性问题，Satisfiability）是第一个&lt;code&gt;NPC&lt;/code&gt;问题，于1971年被&lt;code&gt;Cook Levin&lt;/code&gt;发现。&lt;/p&gt;
+&lt;p&gt;该问题主要描述的是：命题是否可以在某些条件下成立。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SAT问题只需要有一种条件下成立就可以。&lt;/p&gt;
+&lt;p&gt;Valid问题则需要保证在任何条件下均成立才可以。&lt;/p&gt;
+&lt;p&gt;反过来说，&lt;code&gt;Valid(P) &amp;lt;=&amp;gt; UNSAT(~P)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于&lt;code&gt;SAT&lt;/code&gt;问题，现实中有十分多的应用，比如说：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;编译器如果在处理&lt;code&gt;if&lt;/code&gt;语句中，事先得知该条件永远不会被满足，那么编译期就可以删除掉整个&lt;code&gt;if&lt;/code&gt;分支来对程序进行优化。正是由于这个原因，在编译器中往往内置&lt;code&gt;SAT&lt;/code&gt;模块来处理条件分支。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在电路中，特别是芯片设计上，往往需要判断电路是否通畅。如果某些节点通电，但是其他节点不通电，与设计不符合，那么就需要重新设计，这类问题可以被抽象为&lt;code&gt;SAT&lt;/code&gt;问题。相关的&lt;code&gt;EDA&lt;/code&gt;软件上需要处理大量的这类问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;算法&#34;&gt;算法&lt;/h3&gt;
+&lt;p&gt;十分不幸的是，&lt;code&gt;SAT&lt;/code&gt;问题属于&lt;code&gt;NP&lt;/code&gt;问题，该问题当前没有多项式时间的算法，当前一种经典的算法是&lt;code&gt;DPLL&lt;/code&gt;算法。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;dpll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;unitPropogation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selectVar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dpll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dpll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注:&lt;/strong&gt; 上面的&lt;code&gt;TRUE&lt;/code&gt;是 $\top$，&lt;code&gt;FALSE&lt;/code&gt;是 $\bot$&lt;/p&gt;
+&lt;p&gt;上面的 &lt;code&gt;P&lt;/code&gt; 必须是一个&lt;strong&gt;合取范式&lt;/strong&gt;，如果是其他的，必须先转换为一个合取范式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;范式&#34;&gt;范式&lt;/h3&gt;
+&lt;p&gt;一般存在如下范式：合取范式（conjunctive normal form，CNF），析取范式（disjunctive normal form，DNF）和否定范式（negation normal form，NNF）&lt;/p&gt;
+&lt;p&gt;考虑&lt;code&gt;DPLL&lt;/code&gt;算法，该算法是一个递归算法，因此递归分支可能十分多。考虑一个合法的合取范式，该范式的任何相邻的两个子式都由 $\wedge$ 相连，如果其中任何一个子式的结果为&lt;code&gt;false&lt;/code&gt;，那么整个范式的结果必然&lt;code&gt;false&lt;/code&gt;。因此，使用合取范式可以轻松的减少递归分支。&lt;/p&gt;
+&lt;p&gt;这里主要介绍合取范式和否定范式。&lt;/p&gt;
+&lt;h4 id=&#34;否定范式&#34;&gt;否定范式&lt;/h4&gt;
+&lt;p&gt;否定范式的文法如下：&lt;/p&gt;
+&lt;p&gt;$$P ::= p \ | \ \neg p \ | \ \top \ | \ \bot \ | \ P \vee P \ | \ P \wedge P$$&lt;/p&gt;
+&lt;p&gt;这里和命题逻辑的主要区别在于，否定范式不含有蕴含式。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\neg$ 后面的子式必须是原子的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$p1 \wedge \neg p2 \vee p3 \vee \neg p4$ 是典型的否定范式。&lt;/p&gt;
+&lt;p&gt;$p1 \wedge \neg (p2 \vee p3) \vee \neg p4$ 不是否定范式，因为在 $ \neg (p2 \vee p3) $ 这里，$\neg$ 后面的子式不是原子的。&lt;/p&gt;
+&lt;h5 id=&#34;转换规则&#34;&gt;转换规则&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;为了消去蕴含式，定义了如下规则：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$$\begin{align*} C(p) &amp;amp;= p \\\ C(\neg p) &amp;amp;= \neg p \\\ C(P \wedge Q) &amp;amp;= C(P) \wedge C(Q) \\\ C(P \vee Q) &amp;amp;= C(P) \vee C(Q) \\\ C(P \to Q) &amp;amp;= \neg C(P) \vee C(Q) \end{align*}$$&lt;/p&gt;
+&lt;p&gt;$Ex.$ 将 $ p \to (q \to p) $ 中的蕴含式消去。&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*} C(p \to (q \to p)) &amp;amp;= \neg C(p) \vee C(q \to p) \\\ &amp;amp;= \neg p \vee (\neg C(q) \vee C(p)) \\\ &amp;amp;= \neg p \vee (\neg q \vee p) \\\ &amp;amp;= \neg p \vee p \vee \neg q \\\ &amp;amp;= \top \end{align*} $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 上面例子中，$\neg p \vee (\neg q \vee p)$ 已经是否定范式了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;为了转换为否定范式，定义了如下规则：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$$\begin{align*} C(p) &amp;amp;= p \\\ C(\neg p) &amp;amp;= \neg p \\\ C(\neg \neg P) &amp;amp;= P \\\ C(P \wedge Q) &amp;amp;= C(P) \wedge C(Q) \\\ C(P \vee Q) &amp;amp;= C(P) \vee C(Q) \\\ C(\neg(P \vee Q)) &amp;amp;= C(\neg P) \wedge C(\neg Q) \\\ C(\neg(P \wedge Q)) &amp;amp;= C(\neg P) \vee C(\neg Q) \end{align*}$$&lt;/p&gt;
+&lt;p&gt;$Ex.$ 将 $ \neg ((p1 \wedge \neg p2) \vee (p3 \vee \neg p4)) $ 转换为否定范式。&lt;/p&gt;
+&lt;p&gt;$$\begin{align*} \neg ((p1 \wedge \neg p2) \vee (p3 \vee \neg p4)) &amp;amp;= C(\neg (p1 \wedge \neg p2)) \wedge C(\neg (p3 \vee \neg p4)) \\\ &amp;amp;= (C(\neg p1) \vee C(\neg (\neg p2))) \wedge (C(\neg p3) \wedge C(\neg (\neg p4))) \\\ &amp;amp;= (\neg p1 \vee p2) \wedge (\neg p3 \wedge p4) \end{align*}$$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;直观的说：否定范式只是将 $\neg$ 符号推入到每个原子命题上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;合取范式&#34;&gt;合取范式&lt;/h4&gt;
+&lt;p&gt;合取范式的文法如下：&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*} P &amp;amp;::= D \wedge P \\\ D &amp;amp;::= D \vee A \\\ A &amp;amp;::= p \ | \ \neg p \ | \ \top \ | \ \bot \end{align*} $$&lt;/p&gt;
+&lt;p&gt;这里同样不包含蕴含式，另外这里的任意两个子式均是由合取符号连接的。&lt;/p&gt;
+&lt;p&gt;$ (\neg p \vee (\neg q \vee p)) $ 不是合取范式，因为他的两个子式 $\neg p$ 和 $\neg q \vee p$ 没有由合取符号连接。&lt;/p&gt;
+&lt;p&gt;$ (p1 \vee \neg p2) \wedge (p3 \vee \neg p4) $ 是合取范式&lt;/p&gt;
+&lt;p&gt;$ (\neg p \vee \neg q \vee p) $ 同样是合取范式，符合文法。&lt;/p&gt;
+&lt;h5 id=&#34;转换规则-1&#34;&gt;转换规则&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;为了转换为合取范式，定义了如下规则：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先将命题转化为否定范式 $P$. 然后应用如下规则：&lt;/p&gt;
+&lt;p&gt;$$ \begin{align*} C(p) &amp;amp;= p \\\ C(\neg p) &amp;amp;= \neg p \\\ C(P \wedge Q) &amp;amp;= C(P) \wedge C(Q) \\\ C(P \vee Q) &amp;amp;= D(C(P), \ C(Q)) \\\ \\ D(P_1 \wedge P_2,\ Q) &amp;amp;= D(P_1,\ Q) \wedge D(P_2,\ Q) \\\ D(P,\ Q_1 \wedge Q_2) &amp;amp;= D(P,\ Q_1) \wedge D(P,\ Q_2) \\\ D(P,\ Q) &amp;amp;= P \vee Q \end{align*} $$&lt;/p&gt;
+&lt;p&gt;$Ex.$ 将 $ (\neg p1 \wedge p2) \vee (\neg p2 \wedge p4) $ 转换为合取范式。&lt;/p&gt;
+&lt;p&gt;$$\begin{align*} C((\neg p1 \wedge p2) \vee (\neg p2 \wedge p4)) &amp;amp;= D(C(\neg p1 \wedge p2),\ C(\neg p2 \wedge p4)) \\\ &amp;amp;= D(C(\neg p1) \wedge C(p2),\ C(\neg p2) \wedge C(p4)) \\\ &amp;amp;= D(\neg p1 \wedge p2,\ \neg p2 \wedge p4) \\\ &amp;amp;= D(\neg p1, \ \neg p2 \wedge p4) \wedge D(p2,\ \neg p2 \wedge p4) \\\ &amp;amp;= (D(\neg p1,\ \neg p2) \wedge D(\neg p1,\ p4)) \wedge (D(p2,\ \neg p2) \wedge D(p2,\ p4)) \\\ &amp;amp;= ((\neg p1 \vee \neg p2) \wedge (\neg p1 \vee p4)) \wedge ((p2 \vee \neg p2) \wedge (p2 \vee p4)) \\\ &amp;amp;= (\neg p1 \vee \neg p2) \wedge (\neg p1 \vee p4) \wedge (p2 \vee \neg p2) \wedge (p2 \vee p4) \end{align*}$$&lt;/p&gt;
+&lt;h3 id=&#34;dpll-算法&#34;&gt;DPLL 算法&lt;/h3&gt;
+&lt;p&gt;之前已经提到过DPLL算法，这里再重复一下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;dpll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;unitPropogation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selectVar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dpll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dpll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注:&lt;/strong&gt; 上面的&lt;code&gt;TRUE&lt;/code&gt;是 $\top$，&lt;code&gt;FALSE&lt;/code&gt;是 $\bot$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前提到过，&lt;code&gt;DPLL&lt;/code&gt;算法接受一个合取范式&lt;code&gt;P&lt;/code&gt;，返回一个&lt;code&gt;bool&lt;/code&gt;值，用来得知该范式是否可满足。&lt;/p&gt;
+&lt;p&gt;现在直观的解释一下该算法：&lt;/p&gt;
+&lt;p&gt;考虑这样一个合取范式: $(\neg p1 \vee \neg p2) \wedge (p2 \vee p4)$&lt;/p&gt;
+&lt;p&gt;首先假设 $p1 = \top$，此时，该范式被简化为：$\neg p2 \wedge (p2 \vee p4)$, 由于合取符号的关系，现在 $p2$ 只能为 $\bot$. 再次简化，得$p4$，则 $p4$ 必须是 $\top$&lt;/p&gt;
+&lt;p&gt;可以看到，这里范式根据已有的条件对范式进行了简化，在&lt;code&gt;dpll&lt;/code&gt;函数实现里，&lt;code&gt;unitPropogation&lt;/code&gt;函数就是完成这件事的。这里每次都会选择一个变量并赋予相应的值，用作以后的简化，&lt;code&gt;selectVar&lt;/code&gt;就是完成这项工作的。&lt;/p&gt;
+&lt;p&gt;对于 &lt;code&gt;DPLL&lt;/code&gt; 算法的细节：参考 &lt;strong&gt;&lt;a href=&#34;https://www.yuque.com/docs/share/ef4d0f39-4559-4f04-becf-c981704243af?#&#34;&gt;关于DPLL算法中的一些细节问题&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;应用&#34;&gt;应用&lt;/h3&gt;
+&lt;p&gt;有三个凳子，Alice, Bob, Carol 要坐在这三个凳子上。但是他们必须满足如下条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Alice不能坐在Carol旁边。&lt;/li&gt;
+&lt;li&gt;Bob不能坐在Alice右边。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$Q:$ 存在符合上述条件的解决方案吗？&lt;/p&gt;
+&lt;p&gt;设 $A_{i}$ 为Alice坐在第 $i$ 个凳子上，$B_{i}$ 为Bob坐在第 $i$ 个凳子上，$C_{i}$ 为Carol坐在第 $i$ 个凳子上。其中 $1 \leq i \leq 3$&lt;/p&gt;
+&lt;p&gt;现在构造约束条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Alice 必须坐在一个凳子上：
+$$(A_1 \wedge \neg A_2 \wedge \neg A_3) \vee (\neg A_1 \wedge A_2 \wedge \neg A_3) \vee (\neg A_1 \wedge \neg A_2 \wedge A_3)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bob 必须坐在一个凳子上：
+$$(B_1 \wedge \neg B_2 \wedge \neg B_3) \vee (\neg B_1 \wedge B_2 \wedge \neg B_3) \vee (\neg B_1 \wedge \neg B_2 \wedge B_3)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Carol 必须坐在一个凳子上：
+$$(C_1 \wedge \neg C_2 \wedge \neg C_3) \vee (\neg C_1 \wedge C_2 \wedge \neg C_3) \vee (\neg C_1 \wedge \neg C_2 \wedge C_3)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一个椅子上只能坐一个人：
+$$ (A_1 \wedge \neg B_1 \wedge \neg C_1) \vee (\neg A_1 \wedge B_1 \wedge \neg C_1) \vee (\neg A_1 \wedge \neg B_1 \wedge C_1) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二个椅子上只能坐一个人：
+$$ (A_2 \wedge \neg B_2 \wedge \neg C_2) \vee (\neg A_2 \wedge B_2 \wedge \neg C_2) \vee (\neg A_2 \wedge \neg B_2 \wedge C_2) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第三个椅子上只能坐一个人：
+$$ (A_3 \wedge \neg B_3 \wedge \neg C_3) \vee (\neg A_3 \wedge B_3 \wedge \neg C_3) \vee (\neg A_3 \wedge \neg B_3 \wedge C_3) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Alice 不能坐在 Carol 旁边：
+$$ (A_1 \to \neg C_2) \wedge (A_2 \to \neg (C_1 \vee C_3)) \wedge (A_3 \to \neg C_2) $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本答案假设1在最左边，3在最右边。  （左）1 ---- 2 ---- 3 （右）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Bob 不能坐在 Alice 右边：
+$$ (B_1 \to \neg A_2) \wedge (B_1 \to \neg A_3) \wedge (B_2 \to \neg A_3) $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以通过&lt;code&gt;z3&lt;/code&gt;工具来自动的解决如上约束条件下的SAT问题。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法（3）</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_3/" />
+            <id>https://bamceil.github.io/posts/formal-methods_3/</id>
+            <updated>2021-05-29T12:39:33&#43;08:00</updated>
+            <published>2021-05-21T18:55:20&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">命题逻辑文法 $$ P ::= p \ | \ \top \ | \ \bot \ | \ P \vee P \ | \ P \wedge P \ | \ P \to P \ | \ \neg P $$……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;命题逻辑文法&#34;&gt;命题逻辑文法&lt;/h2&gt;
+&lt;p&gt;$$ P ::= p \ | \ \top \ | \ \bot \ | \ P \vee P \ | \ P \wedge P \ | \ P \to P \ | \ \neg P $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ \top $ 是一个原子命题，代表着&lt;code&gt;true&lt;/code&gt;，$ \bot $ 则代表&lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$ P $ 代表一个命题，而 $ p $ 代表原子命题&lt;/p&gt;
+&lt;p&gt;$ \vee $ 表示析取，或者简单理解为&lt;code&gt;or&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$ \wedge $ 表示合取，或者简单理解为&lt;code&gt;and&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$ \to $ 表示蕴含，或者简单理解为&lt;code&gt;if&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;$ \neg $ 表示否定，或者简单理解为&lt;code&gt;not&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;运算&#34;&gt;运算&lt;/h3&gt;
+&lt;p&gt;有了命题定义后，则可以在命题上进行一些运算，例如：&lt;/p&gt;
+&lt;p&gt;定义 $f(P)$：计算 $P$ 中 $\neg$ 的个数。则运算表达式为：&lt;/p&gt;
+&lt;p&gt;$$ f(P) = \begin{cases}
+0, &amp;amp;\quad \text{if} \ P = p \ | \ \top \ | \ \bot \\\\&lt;br&gt;
+f(P_1) + f(P_2), &amp;amp;\quad \text{if} \ P = P_1 \wedge P_2 \\\\&lt;br&gt;
+f(P_1) + f(P_2), &amp;amp;\quad \text{if} \ P = P_1 \vee P_2 \\\\&lt;br&gt;
+f(P_1) + f(P_2), &amp;amp;\quad \text{if} \ P = P_1 \to P_2 \\\\&lt;br&gt;
+1 + f(P_1), &amp;amp;\quad \text{if} \ P = \neg P_1
+\end{cases} $$&lt;/p&gt;
+&lt;h3 id=&#34;语义系统&#34;&gt;语义系统&lt;/h3&gt;
+&lt;p&gt;命题逻辑是抽象的，例如 $P$ 是一个命题，但是这个命题是什么含义呢？这个就需要我们自己根据需要来定义。&lt;/p&gt;
+&lt;p&gt;考虑这样的一种系统：该系统里仅包含&lt;code&gt;T&lt;/code&gt;和&lt;code&gt;F&lt;/code&gt;两个单元，我们定义了一种&lt;strong&gt;映射&lt;/strong&gt;用来将命题逻辑应用到我们自己的系统上：&lt;/p&gt;
+&lt;p&gt;$$\begin{array}{cc|c|c|c}
+p &amp;amp; q &amp;amp; p \wedge q &amp;amp; p \vee q &amp;amp; p \to q \\&lt;br&gt;
+\hline
+F &amp;amp; F &amp;amp; F &amp;amp; F &amp;amp; T \\\&lt;br&gt;
+F &amp;amp; T &amp;amp; F &amp;amp; T &amp;amp; T \\\&lt;br&gt;
+T &amp;amp; F &amp;amp; F &amp;amp; T &amp;amp; F \\\&lt;br&gt;
+T &amp;amp; T &amp;amp; T &amp;amp; T &amp;amp; T
+\end{array}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{array}{c|c}
+p &amp;amp; \neg p \\&lt;br&gt;
+\hline
+T &amp;amp; F \\\&lt;br&gt;
+F &amp;amp; T
+\end{array}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{array}{c}
+\top \\&lt;br&gt;
+\hline
+T
+\end{array}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{array}{c}
+\bot \\&lt;br&gt;
+\hline
+F
+\end{array}$$&lt;/p&gt;
+&lt;p&gt;上面定义了一种映射，将命题逻辑中的符号表示和我们定义的系统关联了起来，由此，我们就可以通过研究命题逻辑来间接的研究我们定义的系统，也由此我们给了 $p\vee q$ 一种具体的含义。现在我们就定义好了一个语义系统。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上面定义的表格称为&lt;strong&gt;真值表&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;证明系统&#34;&gt;证明系统&lt;/h2&gt;
+&lt;p&gt;有了命题之后，我们就可以通过定义一些规则和公理对任意一个命题进行证明。数学中有下列两种证明系统：希尔伯特演绎系统和自然演绎系统&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;希尔伯特演绎系统&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;希尔伯特演绎系统主要引入一些&lt;strong&gt;公理&lt;/strong&gt;和&lt;strong&gt;规则&lt;/strong&gt;来对命题进行证明，主要方法就是从公理出发，通过规则的组合来达到命题。这种演绎系统更加适合于数学。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;自然演绎系统&#34;&gt;自然演绎系统&lt;/h3&gt;
+&lt;p&gt;在自然演绎系统中引入了&lt;strong&gt;断言&lt;/strong&gt;和&lt;strong&gt;推理规则&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;断言&#34;&gt;断言&lt;/h4&gt;
+&lt;p&gt;$$ \Gamma \vdash P$$&lt;/p&gt;
+&lt;p&gt;$ \Gamma $ 是一系列的命题的集合，而 $P$ 是单个的命题，这表示在 $ \Gamma $ 环境下（假设下），$P$ 是成立的（可证明的）&lt;/p&gt;
+&lt;h4 id=&#34;推理规则&#34;&gt;推理规则&lt;/h4&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P_1, \ \dots, \ \Gamma \vdash P_n}{\Gamma \vdash P}(Name) $$&lt;/p&gt;
+&lt;p&gt;在上方的称为&lt;code&gt;假设&lt;/code&gt;，下方的称为&lt;code&gt;结论&lt;/code&gt;，旁边的是&lt;code&gt;推理规则&lt;/code&gt;，表示使用什么推理规则，可以从假设推导出结论。&lt;/p&gt;
+&lt;p&gt;注：当上方为空时，表示结论为&lt;strong&gt;公理&lt;/strong&gt;，否则是&lt;strong&gt;定理&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;下面是对于命题的一些推理规则：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公理 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{}{\Gamma, P \vdash P}(Var) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;公理 2：引入 $\top$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{}{\Gamma \vdash \top}(\top I) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\bot$ 消去定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash \bot}{\Gamma \vdash P}(\bot E) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\wedge$ 引入定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P, \Gamma \vdash Q}{\Gamma \vdash P \wedge Q}(\wedge I) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\wedge$ 消去定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P \wedge Q}{\Gamma \vdash P}(\wedge E_1) $$&lt;/p&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P \wedge Q}{\Gamma \vdash Q}(\wedge E_2) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\vee$ 引入定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P}{\Gamma \vdash P \vee Q}(\vee I_1) $$&lt;/p&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash Q}{\Gamma \vdash P \vee Q}(\vee I_2) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\vee$ 消去定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P \vee Q, \quad \Gamma, P \vdash R, \quad \Gamma, Q \vdash R }{\Gamma \vdash R}(\vee E) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\to$ 引入定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma, P \vdash Q }{\Gamma \vdash P \to Q}(\to I) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\to$ 消去定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P \to Q, \quad \Gamma \vdash P }{\Gamma \vdash Q}(\to E) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\neg$ 引入定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma, P \vdash \bot }{\Gamma \vdash \neg P}(\neg I) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\neg$ 消去定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash P, \quad \Gamma \vdash \neg P}{\Gamma \vdash \bot}(\neg E) $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\neg \neg$ 消去定理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ \frac{\Gamma \vdash \neg \neg P}{\Gamma \vdash P}(\neg \neg E) $$&lt;/p&gt;
+&lt;h4 id=&#34;示例&#34;&gt;示例&lt;/h4&gt;
+&lt;p&gt;$ Ex 1. \ Prove: \ \Gamma, \vdash P \wedge Q \to P $&lt;/p&gt;
+&lt;p&gt;$Proof.$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--------------------- (Var)
+   P /\ Q |- P /\ Q
+--------------------- (/\ E1)
+     P /\ Q |- P
+--------------------- (-&amp;gt; I)
+    |- P /\ Q -&amp;gt; P
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;$ Ex 2. \ Prove: \ \Gamma, \vdash P \wedge Q \to Q \wedge P $&lt;/p&gt;
+&lt;p&gt;$Proof.$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;-------------------- (Var)   -------------------- (Var)
+  P /\ Q |- P /\ Q              P /\ Q |- P /\ Q
+-------------------- (/\ E1) -------------------- (/\ E1)
+    P /\ Q |- Q                   P /\ Q |- P
+------------------------------------------------- (/\ I)
+                   P /\ Q |- Q /\ P
+------------------------------------------------- (-&amp;gt; I)
+                |- P /\ Q -&amp;gt; Q /\ P
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;$ Ex 3. \ Prove: \ \Gamma, \vdash (P \to R) \wedge (Q \to R) \to (P \wedge Q \to R) $&lt;/p&gt;
+&lt;p&gt;$Proof.$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;------------------------------------------ (Var)   ------------------------------------ (Var)
+(P-&amp;gt;R)/\(Q-&amp;gt;R), P/\Q |- (P-&amp;gt;R)/\(Q-&amp;gt;R)                 (P-&amp;gt;R)/\(Q-&amp;gt;R). P/\Q |- P /\ Q
+------------------------------------------ (/\ E1) ------------------------------------ (/\ E1)
+      (P-&amp;gt;R)/\(Q-&amp;gt;R), P/\Q |- P-&amp;gt;R                       (P-&amp;gt;R)/\(Q-&amp;gt;R), P/\Q |- P
+------------------------------------------------------------------------------------------ (-&amp;gt; E)
+                                (P-&amp;gt;R)/\(Q-&amp;gt;R), P/\Q |- R
+------------------------------------------------------------------------------------------ (-&amp;gt; I)
+                               (P-&amp;gt;R)/\(Q-&amp;gt;R) |- (P/\Q-&amp;gt;R)
+------------------------------------------------------------------------------------------ (-&amp;gt; I)
+                              |- (P-&amp;gt;R)/\(Q-&amp;gt;R) -&amp;gt; (P/\Q-&amp;gt;R)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;$ Ex 4. \ Prove: \ \Gamma, \vdash (P \to Q \wedge R) \to (P \to Q) \wedge (P \to R) $&lt;/p&gt;
+&lt;p&gt;$Proof.$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;--------------------------- (Var) ------------------- (Var)      -------------------------- (Var) --------------------- (Var)
+  (P-&amp;gt;Q/\R), P |- P-&amp;gt;Q/\R           (P-&amp;gt;Q/\R), P|-P                (P-&amp;gt;Q/\R), P |- P-&amp;gt;Q/\P          (P-&amp;gt;Q/\R), P |- P
+------------------------------------------------------- (-&amp;gt; E)   ------------------------------------------------------ (-&amp;gt; E)
+                    (P-&amp;gt;Q/\R), P |- Q/\R                                             (P-&amp;gt;Q/\R), P |- Q/\P
+------------------------------------------------------- (/\ E1) ------------------------------------------------------ (/\ E2)
+                     (P-&amp;gt;Q/\R), P |- Q                                                 (P-&amp;gt;Q/\R), P |- R
+------------------------------------------------------- (-&amp;gt; I)  ------------------------------------------------------- (-&amp;gt; I)
+                    (P-&amp;gt;Q/\R) |- (P-&amp;gt;Q)                                               (P-&amp;gt;Q/\R) |- (P-&amp;gt;R)
+----------------------------------------------------------------------------------------------------------------------- (/\ I)
+                                                 (P-&amp;gt;Q/\R) |- (P-&amp;gt;Q)/\(P-&amp;gt;R)
+----------------------------------------------------------------------------------------------------------------------- (-&amp;gt; I)
+                                              |- (P-&amp;gt;Q/\R) -&amp;gt; (P-&amp;gt;Q)/\(P-&amp;gt;R)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;$ Ex 5. \ Prove: \ \Gamma, \vdash (P \wedge (Q \wedge R)) \to ((P \wedge Q) \wedge R)) $&lt;/p&gt;
+&lt;p&gt;$Proof.$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;                                  --------------------------- (Var)
+                                    (P/\(Q/\R)) |- P/\(Q/\R)
+----------------------------(Var) --------------------------- (/\ E2) ---------------------------------------- (Var)
+  (P/\(Q/\R)) |- P/\(Q/\R)             (P/\(Q/\R)) |- Q/\R                    (P/\(Q/\R)) |- P/\(Q/\R)
+-------------------------- (/\ E1) ------------------------- (/\ E1) ----------------------------------------- (/\ E2)
+     (P/\(Q/\R)) |- P                  (P/\(Q/\R)) |- Q                         (P/\(Q/\R)) |- Q/\R
+--------------------------------------------------------- (/\ I)  -------------------------------------------- (/\ E2)
+               (P/\(Q/\R)) |- (P/\Q)                                              (P/\(Q/\R)) |- R
+----------------------------------------------------------------------------------------------------------------------- (/\ I)
+                                                 (P/\(Q/\R)) |- ((P/\Q)/\R)
+----------------------------------------------------------------------------------------------------------------------- (-&amp;gt; I)
+                                              |- (P/\(Q/\R)) -&amp;gt; ((P/\Q)/\R)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;直觉主义构造主义&#34;&gt;直觉主义（构造主义）&lt;/h2&gt;
+&lt;p&gt;数学逻辑中存在一种称为构造主义的流派，该流派的主要观点是：如果要证明某数学对象存在，则必须将其构造出来。这也就意味着，即使通过反证法证明了其存在，但对于构造主义来说仍然不足以证明其成立。（因为没有真正的构造出来。）&lt;/p&gt;
+&lt;p&gt;数学中存在这样一种命题：对于任意的命题 $P$，$ P \vee \neg P $ 成立。这种逻辑命题又被称为&lt;strong&gt;排中律&lt;/strong&gt;。显然，构造主义是不接受这样的命题的。也就是说，在构造主义中，不存在反证法。&lt;/p&gt;
+&lt;p&gt;对于构造主义来说，下面的证明是有问题的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;证明：存在两个无理数 $p, q$，使得 $p^q$ 是有理数&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;证明：令 $p = q = \sqrt{2}$，则 $p^q = (\sqrt{2})^{\sqrt{2}}$&lt;/p&gt;
+&lt;p&gt;考虑下面两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$(\sqrt{2})^{\sqrt{2}}$ 是有理数，证毕。&lt;/li&gt;
+&lt;li&gt;$(\sqrt{2})^{\sqrt{2}}$ 是无理数，令 $p = (\sqrt{2})^{\sqrt{2}}, q = \sqrt{2}$，则 $p^q = ((\sqrt{2})^{\sqrt{2}})^{\sqrt{2}} = (\sqrt{2})^2 = 2$，证毕。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;值得注意的是，上面的证明中，隐式地使用了排中律。因为我们假设 $p^q$ 要么是有理数，要么是无理数，并且我们并没有构造出来一个具体的实例。&lt;/p&gt;
+&lt;h3 id=&#34;直觉主义的证明系统&#34;&gt;直觉主义的证明系统&lt;/h3&gt;
+&lt;p&gt;直觉主义的证明系统和命题逻辑一致。但是在推导规则中，需要剔除掉 $\neg$ 的相关规则。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法（2）</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_2/" />
+            <id>https://bamceil.github.io/posts/formal-methods_2/</id>
+            <updated>2021-05-21T22:24:42&#43;08:00</updated>
+            <published>2021-05-20T19:37:43&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">历史 1950年左右，语言学家乔姆斯基提出了一种文法，可以使用数学的理论来对文法进行研……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;历史&#34;&gt;历史&lt;/h2&gt;
+&lt;p&gt;1950年左右，语言学家乔姆斯基提出了一种文法，可以使用数学的理论来对文法进行研究，进而对语言进行研究。&lt;/p&gt;
+&lt;p&gt;现在先给出一些定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;非终结符&lt;/strong&gt;是可以再次被替换的中间变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;终结符&lt;/strong&gt;是不可再次被替换的变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;规则&lt;/strong&gt;用来指明如何进行替换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在，定义如下非终结符集合：&lt;/p&gt;
+&lt;p&gt;$N$ = { 句子，主，谓，宾 }&lt;/p&gt;
+&lt;p&gt;定义如下终结符：&lt;/p&gt;
+&lt;p&gt;$T$ = { 牛，羊，吃，喝，水，草 }&lt;/p&gt;
+&lt;p&gt;定义如下规则：&lt;/p&gt;
+&lt;p&gt;句子 $\to$ 主 谓 宾&lt;/p&gt;
+&lt;p&gt;主 $\to$ 牛 | 羊&lt;/p&gt;
+&lt;p&gt;谓 $\to$ 吃 | 喝&lt;/p&gt;
+&lt;p&gt;宾 $\to$ 水 | 草&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：A | B 表示要么是A，要么是B，两者只会取其中一个。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;定义一个开始符号：$S = $ 句子&lt;/p&gt;
+&lt;p&gt;现在，可以根据如上规则出现下列组合：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;牛 喝 水&lt;/li&gt;
+&lt;li&gt;羊 吃 水&lt;/li&gt;
+&lt;li&gt;羊 吃 草&lt;/li&gt;
+&lt;li&gt;牛 喝 草&lt;/li&gt;
+&lt;li&gt;......&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上面的句子有的符合正常表达，例如&lt;code&gt;1,3&lt;/code&gt;，有的不符合正常表达，例如&lt;code&gt;2,4&lt;/code&gt;。但是即使如此，这仍然是一种巨大的进步。因为到这个时侯，语言就具有了通用的表达手段，我们可以借助数学符号进行抽象，然后应用数学手段来研究他们。&lt;/p&gt;
+&lt;h2 id=&#34;上下文无关文法&#34;&gt;上下文无关文法&lt;/h2&gt;
+&lt;p&gt;现在定义如下文法：&lt;/p&gt;
+&lt;p&gt;$$ G \quad = \quad  &amp;lt;N, \ T, \ P, \ S&amp;gt; $$&lt;/p&gt;
+&lt;p&gt;其中，$$ N \to \lbrace N_1, \ N_2, \ \dots, \ N_m \rbrace \qquad  非终结符$$ $$ T \to \lbrace T_1, \ T_2, \ \dots \ T_s \rbrace \qquad 终结符 $$ $$ P \to \lbrace N \to (T \cup N)^{*}, \ N \to (T \cup N)^{*}, \ \dots \rbrace \quad 推导规则 $$ $$ S \to 起始位置， S \in N $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;定义：推导&lt;/p&gt;
+&lt;p&gt;从 $G$ 中 $S$ 出发，每次用右侧符号替换左侧，直到 $G$ 中全是终结符号为止。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例：
+$$ G \quad = \quad  &amp;lt;N, \ T, \ P, \ S&amp;gt; $$ $$ N \to \lbrace A, \ B, \ C, \ S \rbrace $$ $$ T \to \lbrace x, \ y, \ z, \ u, \ v, \ w \rbrace $$ $$ S \to \lbrace S\rbrace $$&lt;/p&gt;
+&lt;p&gt;推导规则如下：&lt;/p&gt;
+&lt;p&gt;$$ \begin{aligned} P \to \lbrace \quad S &amp;amp;\to A B C, \\\ A &amp;amp;\to x \ | \ y, \\\ B &amp;amp;\to x \ | \ u ,\\\ C &amp;amp;\to v \ | \ w \quad \rbrace \end{aligned} $$&lt;/p&gt;
+&lt;p&gt;现在可以生成如下的语句：$ x u v $，如果将 $x$ 看作&lt;code&gt;牛&lt;/code&gt;，$u$ 看作&lt;code&gt;喝&lt;/code&gt;，$v$ 看作&lt;code&gt;水&lt;/code&gt;，则这个句子就表示&lt;code&gt;牛喝水&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如上，我们已经给了文法一种抽象的数学描述。&lt;/p&gt;
+&lt;p&gt;上述的文法表述称为&lt;strong&gt;上下文无关文法&lt;/strong&gt;，该文法的推导规则左边&lt;strong&gt;有且仅有一个&lt;/strong&gt;非终结符。&lt;/p&gt;
+&lt;p&gt;与之相对应的，还有一种&lt;strong&gt;上下文相关文法&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;考虑下面的规则：&lt;/p&gt;
+&lt;p&gt;活 主 $\to$ 牛 | 羊&lt;/p&gt;
+&lt;p&gt;此时，必须在主语前有一个&lt;code&gt;活&lt;/code&gt;字才可以开始替换。现在主语和上下文的情况相关联，这种文称为上下文相关文法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;文法&#34;&gt;文法&lt;/h2&gt;
+&lt;p&gt;1950年左右，语言学家乔姆斯基提出了&lt;strong&gt;乔姆斯基形式文法体系&lt;/strong&gt;，该体系将文法分为四类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任意文法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该文法包含所有的文法，其形式为： $ \alpha \to \beta $， 表示 $ \alpha $ 可以被 $ \beta $ 替换&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;上下文相关文法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该文法形式为： $ \alpha \to \beta $，但是必须满足 $ |\alpha| \le |\beta| $&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;上下文无关文法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该文法形式为： $ A \to \beta $
+注：$A$ 表示非终结符&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;正则文法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该文法形式为： $ A \to \alpha \ 或 \ A \to Bc $
+注： $A,B$ 表示非终结符，$ \alpha,c $ 表示终结符。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这些文法从上到下属于&lt;strong&gt;真&lt;/strong&gt;包含关系，即任意文法真包含上下文相关文法，上下文相关文法真包含上下文无关文法，上下文无关文法真包含正则文法。&lt;/p&gt;
+&lt;p&gt;在自动机理论中，每一种文法都对应一种自动机，其中任意文法对应图灵机，这表示任意文法的表达能力最强。&lt;/p&gt;
+&lt;h2 id=&#34;结构化归纳法&#34;&gt;结构化归纳法&lt;/h2&gt;
+&lt;p&gt;对于一个任意文法：$ N \to AB|x|\cdots $ 证明命题 $P(N)$ 成立。
+规则如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$P(T)$ 成立（对右侧所有终结符成立）&lt;/li&gt;
+&lt;li&gt;$P(N^{\prime})$ 成立（$P$对$N$的子式都成立）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给定文法 $E \to E + E \ | \ E - E \ | \ n \ | \ (E) $&lt;/p&gt;
+&lt;p&gt;证明：对于任意 $E$，其左右括号的个数相等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对终结符 $n$，左括号为0，右括号为0，成立。&lt;/li&gt;
+&lt;li&gt;对于 $E \to E_1 + E_2$，设$E_1$ 的左括号个数为 $l_1$，右括号个数为 $r_1$，$E_2$ 的左括号个数为 $l_2$，右括号个数为 $r_2$，根据归纳假设有：$l_1 = r_1, \quad l_2 = r_2$，则 $E$ 的左括号个数为 $l = l_1 + l_2$，右括号个数为 $r = r_1 + r_2$，有 $l = r$&lt;/li&gt;
+&lt;li&gt;对于 $E \to E_1 - E_2$，设$E_1$ 的左括号个数为 $l_1$，右括号个数为 $r_1$，$E_2$ 的左括号个数为 $l_2$，右括号个数为 $r_2$，根据归纳假设有：$l_1 = r_1, \quad l_2 = r_2$，则 $E$ 的左括号个数为 $l = l_1 + l_2$，右括号个数为 $r = r_1 + r_2$，有 $l = r$&lt;/li&gt;
+&lt;li&gt;对于 $E \to (E_1)$，设$E_1$ 的左括号个数为 $l_1$，右括号个数为 $r_1$，根据归纳假设有：$l_1 = r_1$，则 $E$ 的左括号个数为 $l = l_1 + 1$，右括号个数为 $r = r_1 + 1$，有 $l = r$&lt;/li&gt;
+&lt;li&gt;证毕。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;数学归纳法&#34;&gt;数学归纳法&lt;/h3&gt;
+&lt;p&gt;数学归纳法是结构化归纳法的真子集。&lt;/p&gt;
+&lt;p&gt;构造自然数文法：&lt;/p&gt;
+&lt;p&gt;$$ N \to S N \quad | \quad \odot $$&lt;/p&gt;
+&lt;p&gt;其中，$\odot$称为&lt;strong&gt;零元&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;则有如下对应关系：&lt;/p&gt;
+&lt;p&gt;$$ \begin{aligned} \odot &amp;amp;\to 0 \\\ S\odot &amp;amp;\to 1 \\\ SS\odot &amp;amp;\to 2 \\\ &amp;amp;\dots \end{aligned} $$&lt;/p&gt;
+&lt;p&gt;则对于任意命题 $P(n)$，证明规则如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$P(0)$ 成立&lt;/li&gt;
+&lt;li&gt;$P(k) \Rightarrow P(k+1) $ 成立&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">形式化方法（1）</title>
+            <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_1/" />
+            <id>https://bamceil.github.io/posts/formal-methods_1/</id>
+            <updated>2021-05-20T21:49:02&#43;08:00</updated>
+            <published>2021-05-20T16:57:50&#43;08:00</published>
+            <author>
+                    <name>bamceil</name>
+                    <uri>https://bamceil.github.io/</uri>
+                    <email>bamceil@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">简介 这篇文章主要介绍形式化方法的历史及研究目标。 历史发展 数学有两种形式，证明和计算。……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;这篇文章主要介绍形式化方法的历史及研究目标。&lt;/p&gt;
+&lt;h3 id=&#34;历史发展&#34;&gt;历史发展&lt;/h3&gt;
+&lt;p&gt;数学有两种形式，证明和计算。&lt;/p&gt;
+&lt;h4 id=&#34;证明&#34;&gt;证明&lt;/h4&gt;
+&lt;p&gt;在1900年时，数学由&lt;strong&gt;经验直观&lt;/strong&gt;走向了&lt;strong&gt;公理化&lt;/strong&gt;，造成这个转变的主要是&lt;strong&gt;悖论&lt;/strong&gt;的出现。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;经验直观&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;依赖于过往的经验和一种直观的解释。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;公理化&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在数学中，依据某些公理，依靠正确的方法，推导出的数学系统，即使其中某些观点和直觉相违背。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;悖论&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数学中的某些充满矛盾的命题，一般从逻辑上无法判断其正确与否。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一些经典的悖论如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;理发师悖论（罗素悖论）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;小城里的理发师放出豪言：他要为，而且只为，小城里所有不为自己刮脸的人刮脸&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;现在，他该为自己刮脸吗？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假如他为自己刮脸，那么按照他的豪言：&lt;code&gt;他只为小城里所有不为自己刮脸的人刮脸&lt;/code&gt;，则他不应该给自己刮脸。假如他不为自己刮脸，那么按照他的豪言：&lt;code&gt;他要为小城里所有不为自己刮脸的人刮脸&lt;/code&gt;，那么他应该为自己刮脸。此时无论他选择做什么，都会招致他的豪言不成立。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;上帝悖论&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;上帝是无所不能的&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;那么上帝可以找到他做不到的事吗？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假如上帝可以找到，那么这件事他无法做到。假如上帝找不到，那么这件事本身就是上帝做不到的。此时无论上帝做到还是做不到都证明&lt;code&gt;上帝不是无所不能的&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这些悖论都是一种&lt;strong&gt;自指向结构&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;自指向结构&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;考虑上面的两个悖论，他们都在&lt;strong&gt;命题应用在自己身上&lt;/strong&gt;的时候出现了错误。例如，理发师可以轻松的决定是否为其他人理发，但是当他考虑自己的时候就出现了悖论。上帝可以轻松的做到其他人的事，但是他要做到关于自己的事时同样招致悖论。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注：在很久之前，公理化就出现了，但是在1900年左右的数学大会上才系统的提出了公理化。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;计算&#34;&gt;计算&lt;/h4&gt;
+&lt;p&gt;20世纪，图灵设计了图灵机，之后冯诺依曼设计实现了真正的计算机。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图灵机是一种计算模型，不是一种物理上的机器。但是冯诺依曼设计的计算机体系是一种真正物理上的计算机，是图灵机的一种实现。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;图灵的老师阿隆佐·邱奇，同样设计了另一种计算模型：$\lambda$ 演算，该模型和图灵机的计算能力等价。&lt;/p&gt;
+&lt;p&gt;停机问题：&lt;strong&gt;是否存在一个程序&lt;code&gt;P&lt;/code&gt;，对于任意输入的程序&lt;code&gt;w&lt;/code&gt;，能够判断&lt;code&gt;w&lt;/code&gt;会在有限时间内结束或者死循环&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图灵机无法对该问题获得答案，也就是说，该问题是不可判定的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;等价问题：&lt;strong&gt;给定两个 $\lambda$ 表达式是否等价&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\lambda$ 演算同样无法获得该问题的解，因此该问题同样是不可判定的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由此，可以知道：数学中存在不可计算（判定）的问题。&lt;/p&gt;
+&lt;h4 id=&#34;总结&#34;&gt;总结&lt;/h4&gt;
+&lt;p&gt;数学中的两个方向，证明和计算都存在自身无法解决的问题。&lt;/p&gt;
+&lt;h2 id=&#34;基础知识&#34;&gt;基础知识&lt;/h2&gt;
+&lt;h3 id=&#34;集合&#34;&gt;集合&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;并集&lt;/li&gt;
+&lt;li&gt;交集&lt;/li&gt;
+&lt;li&gt;差集&lt;/li&gt;
+&lt;li&gt;幂集：所有子集的集合，共 $2^n$ 个，其中 $n$ 为集合中元素的个数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例：$ X = \lbrace x_1, x_2, x_3 \rbrace $&lt;/p&gt;
+&lt;p&gt;$$\mathcal{P} = \lbrace \empty, \lbrace x_1 \rbrace, \lbrace x_2 \rbrace, \lbrace x_3 \rbrace, \lbrace x_1, x_2 \rbrace, \lbrace x_1, x_3 \rbrace, \lbrace x_2, x_3 \rbrace, \lbrace x_1, x_2, x_3 \rbrace \rbrace$$&lt;/p&gt;
+&lt;p&gt;集合的基数：$|X| = $ 集合中元素的个数。如 $|\lbrace x_1, x_2, ..., x_n\rbrace| = n$&lt;/p&gt;
+&lt;p&gt;组合数：$\sum\limits_{i=0}^{n} = 2^n$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;组合数和幂集的元素个数相等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;计算复杂性的基本结论&#34;&gt;计算复杂性的基本结论&lt;/h3&gt;
+&lt;p&gt;算法关注的是可实用性的复杂度的算法实现。
+计算复杂性关注某些问题的复杂性的上下界。&lt;/p&gt;
+&lt;p&gt;$P$ 问题：多项式复杂度的问题
+$E$ 问题：指数复杂度的问题&lt;/p&gt;
+&lt;p&gt;在 $P$ 问题和 $E$ 问题中间，有一类特殊的问题，他们的求解是 $E$ 问题，但检验该问题的解是 $P$ 问题。对于这类问题统称为 $NP$ 问题，因此下列命题： $P = NP$ 描述的是对于一个可以在多项式时间内检验的问题，是否可以在多项式时间内找到解呢？&lt;/p&gt;
+&lt;p&gt;下面是一些 $NP$ 问题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;子集求和问题：给定某集合，求一个非空子集，使得该子集的和为特定值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图着色问题：给图的每一个节点着色，使得相连的节点颜色不同，求最少的使用颜色。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;总结-1&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;形式化方法这门课，主要涉及如下几方面的问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$ NP $ 问题&lt;/li&gt;
+&lt;li&gt;公理系统&lt;/li&gt;
+&lt;li&gt;命题逻辑&lt;/li&gt;
+&lt;li&gt;谓词逻辑&lt;/li&gt;
+&lt;li&gt;运筹学&lt;/li&gt;
+&lt;li&gt;证明&lt;/li&gt;
+&lt;li&gt;......&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" term="形式化方法" label="形式化方法" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+</feed>
