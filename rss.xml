@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sat, 29 May 2021 13:55:24 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 29 May 2021 14:45:31 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://bamceil.github.io/rss.xml" />
         
@@ -991,14 +991,14 @@ F[y \mapsto x] &amp;amp;= (\exists x.\ (P(y,\ x) \wedge \forall y.\ (\neg Q(y,\ 
 &lt;blockquote&gt;
 &lt;p&gt;该规则其实可以看作是重命名规则，因为它将 $x$ 变成了 $u$，而整个公式的含义没有改变。上面的 $Ex2$ 就是一个例子。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;自由变量：作用域内使用却未在该作用域内定义的变量&lt;/p&gt;
-&lt;p&gt;绑定变量：作用域内定义的变量&lt;/p&gt;
-&lt;p&gt;绑定：自由变量被转换为绑定变量&lt;/p&gt;
-&lt;p&gt;替换：作用域内的变量被替换成表达式&lt;/p&gt;
-&lt;p&gt;捕获：做变量替换时表达式中有变量与作用域内变量重名时，发生的情况。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自由变量：作用域内使用却未在该作用域内定义的变量&lt;/li&gt;
+&lt;li&gt;绑定变量：作用域内定义的变量&lt;/li&gt;
+&lt;li&gt;绑定：自由变量被转换为绑定变量&lt;/li&gt;
+&lt;li&gt;替换：作用域内的变量被替换成表达式&lt;/li&gt;
+&lt;li&gt;捕获：做变量替换时表达式中有变量与作用域内变量重名时，发生的情况。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;推导规则&#34;&gt;推导规则&lt;/h2&gt;
 &lt;p&gt;谓词逻辑的证明系统和命题逻辑一样，都是自然演绎。那么也同样存在一些推导规则：&lt;/p&gt;
 &lt;p&gt;$$ \frac{\Gamma,\ x \vdash P}{\Gamma \vdash \forall x.\ P }(\forall I) $$&lt;/p&gt;

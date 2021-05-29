@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Bamceil</title>
     <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2021-05-29T13:55:24&#43;08:00</updated>
+    <updated>2021-05-29T14:45:31&#43;08:00</updated>
     <id>https://bamceil.github.io/</id>
     <link rel="alternate" type="text/html" href="https://bamceil.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://bamceil.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">形式化方法期末考试（1）2019 春</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_final-test1/" />
             <id>https://bamceil.github.io/posts/formal-methods_final-test1/</id>
-            <updated>2021-05-29T13:19:49&#43;08:00</updated>
+            <updated>2021-05-29T14:23:53&#43;08:00</updated>
             <published>2021-05-27T17:47:20&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -245,7 +245,7 @@ F_3 &amp;amp;= F_1 \wedge \neg D
             <title type="text">形式化方法期中考试（1）2020 秋</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_middle-test/" />
             <id>https://bamceil.github.io/posts/formal-methods_middle-test/</id>
-            <updated>2021-05-28T15:57:34&#43;08:00</updated>
+            <updated>2021-05-29T14:23:46&#43;08:00</updated>
             <published>2021-05-26T15:23:16&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -576,7 +576,7 @@ F ::=\ \ \ &amp;amp;(outa1 = f(in1, in2) \\\&lt;br&gt;
             <title type="text">形式化方法（6）</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_6/" />
             <id>https://bamceil.github.io/posts/formal-methods_6/</id>
-            <updated>2021-05-26T15:15:17&#43;08:00</updated>
+            <updated>2021-05-29T14:18:48&#43;08:00</updated>
             <published>2021-05-25T18:33:16&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -830,7 +830,7 @@ Q ::=\ \ \ &amp;amp;P \to (outa2 = outb)
             <title type="text">形式化方法（5）</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_5/" />
             <id>https://bamceil.github.io/posts/formal-methods_5/</id>
-            <updated>2021-05-26T20:29:31&#43;08:00</updated>
+            <updated>2021-05-29T14:21:29&#43;08:00</updated>
             <published>2021-05-23T16:55:36&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -991,14 +991,14 @@ F[y \mapsto x] &amp;amp;= (\exists x.\ (P(y,\ x) \wedge \forall y.\ (\neg Q(y,\ 
 &lt;blockquote&gt;
 &lt;p&gt;该规则其实可以看作是重命名规则，因为它将 $x$ 变成了 $u$，而整个公式的含义没有改变。上面的 $Ex2$ 就是一个例子。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;自由变量：作用域内使用却未在该作用域内定义的变量&lt;/p&gt;
-&lt;p&gt;绑定变量：作用域内定义的变量&lt;/p&gt;
-&lt;p&gt;绑定：自由变量被转换为绑定变量&lt;/p&gt;
-&lt;p&gt;替换：作用域内的变量被替换成表达式&lt;/p&gt;
-&lt;p&gt;捕获：做变量替换时表达式中有变量与作用域内变量重名时，发生的情况。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自由变量：作用域内使用却未在该作用域内定义的变量&lt;/li&gt;
+&lt;li&gt;绑定变量：作用域内定义的变量&lt;/li&gt;
+&lt;li&gt;绑定：自由变量被转换为绑定变量&lt;/li&gt;
+&lt;li&gt;替换：作用域内的变量被替换成表达式&lt;/li&gt;
+&lt;li&gt;捕获：做变量替换时表达式中有变量与作用域内变量重名时，发生的情况。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;推导规则&#34;&gt;推导规则&lt;/h2&gt;
 &lt;p&gt;谓词逻辑的证明系统和命题逻辑一样，都是自然演绎。那么也同样存在一些推导规则：&lt;/p&gt;
 &lt;p&gt;$$ \frac{\Gamma,\ x \vdash P}{\Gamma \vdash \forall x.\ P }(\forall I) $$&lt;/p&gt;
@@ -1059,7 +1059,7 @@ F[y \mapsto x] &amp;amp;= (\exists x.\ (P(y,\ x) \wedge \forall y.\ (\neg Q(y,\ 
             <title type="text">形式化方法（4）</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_4/" />
             <id>https://bamceil.github.io/posts/formal-methods_4/</id>
-            <updated>2021-05-28T22:05:04&#43;08:00</updated>
+            <updated>2021-05-29T14:18:42&#43;08:00</updated>
             <published>2021-05-22T19:47:55&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -1276,7 +1276,7 @@ $$ (B_1 \to \neg A_2) \wedge (B_1 \to \neg A_3) \wedge (B_2 \to \neg A_3) $$&lt;
             <title type="text">形式化方法（3）</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_3/" />
             <id>https://bamceil.github.io/posts/formal-methods_3/</id>
-            <updated>2021-05-29T12:39:33&#43;08:00</updated>
+            <updated>2021-05-29T14:18:39&#43;08:00</updated>
             <published>2021-05-21T18:55:20&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -1589,7 +1589,7 @@ F
             <title type="text">形式化方法（2）</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_2/" />
             <id>https://bamceil.github.io/posts/formal-methods_2/</id>
-            <updated>2021-05-21T22:24:42&#43;08:00</updated>
+            <updated>2021-05-29T14:18:35&#43;08:00</updated>
             <published>2021-05-20T19:37:43&#43;08:00</published>
             <author>
                     <name>bamceil</name>
@@ -1745,7 +1745,7 @@ $$ G \quad = \quad  &amp;lt;N, \ T, \ P, \ S&amp;gt; $$ $$ N \to \lbrace A, \ B,
             <title type="text">形式化方法（1）</title>
             <link rel="alternate" type="text/html" href="https://bamceil.github.io/posts/formal-methods_1/" />
             <id>https://bamceil.github.io/posts/formal-methods_1/</id>
-            <updated>2021-05-20T21:49:02&#43;08:00</updated>
+            <updated>2021-05-29T14:14:27&#43;08:00</updated>
             <published>2021-05-20T16:57:50&#43;08:00</published>
             <author>
                     <name>bamceil</name>
