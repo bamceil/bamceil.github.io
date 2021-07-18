@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.83.1" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>形式化方法期中考试（1）2020 秋 | Bamceil</title>
+
+    <link rel="stylesheet" href="/css/meme.min.26923b47977d629b4c6095b369e3b5873c5ae74814b7ef32110d29ddfd3cb7e4.css"/>
+
+    
+    
+        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="bamceil" /><meta name="description" content="证明： $$ (P \wedge Q) \vdash P \to Q $$ 证明： 1 2 3 4 5 6 --------------------- (var) (P/\Q), P |- P/\Q --------------------- (/\ E2) (P/\Q), P |- Q --------------------- (-&gt; I) (P/\Q) |- P-&gt;Q 证明……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Bamceil" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Bamceil" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://bamceil.github.io/posts/formal-methods_middle-test1/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-05-26T15:23:16+08:00",
+        "dateModified": "2021-07-18T14:33:23+08:00",
+        "url": "https://bamceil.github.io/posts/formal-methods_middle-test1/",
+        "headline": "形式化方法期中考试（1）2020 秋",
+        "description": "证明： $$ (P \\wedge Q) \\vdash P \\to Q $$ 证明： 1 2 3 4 5 6 --------------------- (var) (P/\\Q), P |- P/\\Q --------------------- (/\\ E2) (P/\\Q), P |- Q --------------------- (-\u003e I) (P/\\Q) |- P-\u003eQ 证明……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  1653 ,
+        "image": ["https://bamceil.github.io/image/prove3.png","https://bamceil.github.io/image/q1.png","https://bamceil.github.io/image/q2.png"],
+        "author": {
+            "@type": "Person",
+            "description": "随缘去吧",
+            "email": "bamceil@outlook.com",
+            "image": "https://bamceil.github.io/icons/apple-touch-icon.png",
+            "url": "https://bamceil.github.io/",
+            "name": "bamceil"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Bamceil",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bamceil.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://bamceil.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://bamceil.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="形式化方法期中考试（1）2020 秋" />
+<meta property="og:description" content="证明： $$ (P \wedge Q) \vdash P \to Q $$ 证明： 1 2 3 4 5 6 --------------------- (var) (P/\Q), P |- P/\Q --------------------- (/\ E2) (P/\Q), P |- Q --------------------- (-&gt; I) (P/\Q) |- P-&gt;Q 证明……" />
+<meta property="og:url" content="https://bamceil.github.io/posts/formal-methods_middle-test1/" />
+<meta property="og:site_name" content="Bamceil" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://bamceil.github.io/image/prove3.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-05-26T15:23:16&#43;08:00" />
+    <meta property="article:modified_time" content="2021-07-18T14:33:23&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">Bamceil</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">形式化方法期中考试（1）2020 秋</h1>
+
+            <div class="post-subtitle p-name">期中试题及参考答案</div>
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-05-26T15:23:16&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.5.26</time>
+    
+    
+        
+        <time datetime="2021-07-18T14:33:23&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.7.18</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E6%95%B0%E5%AD%A6/" class="category-link p-category">数学</a></span>
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1653</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;4&nbsp;分钟</span>
+    
+    
+        
+            
+            <span class="post-meta-item busuanzi-page-pv" id="busuanzi_container_page_pv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon post-meta-icon"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>&nbsp;<span id="busuanzi_value_page_pv"></span></span>
+        
+    
+    
+</div>
+
+            
+
+            <div class="post-body e-content">
+              <ol>
+<li><strong>证明： $$ (P \wedge Q) \vdash P \to Q $$</strong></li>
+</ol>
+<p>证明：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">--------------------- (var)
+  (P/\Q), P |- P/\Q
+--------------------- (/\ E2)
+   (P/\Q), P |- Q
+--------------------- (-&gt; I)
+   (P/\Q) |- P-&gt;Q
+</code></pre></td></tr></table></div>
+</div>
+</div><ol start="2">
+<li><strong>证明： $$ \vdash (P \vee Q) \to (\neg Q \to P) $$</strong></li>
+</ol>
+<p>证明：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">                                                              --------------------- (var) ---------------------- (var)
+                                                                (P\/Q), ~Q, Q |- Q          (P\/Q), ~Q, Q |- ~Q
+                                                              -------------------------------------------------- (~ E)
+                                                                                (P\/Q), ~Q, Q |- FALSE
+------------------------ (var)  ----------------------- (var) -------------------------------------------------- (FALSE E)
+   (P\/Q), ~Q |- P\/Q              (P\/Q), ~Q, P |- P                             (P\/Q), ~Q, Q |- P
+---------------------------------------------------------------------------------------------------------------- (\/ E)
+                                              (P\/Q), ~Q |- P
+---------------------------------------------------------------------------------------------------------------- (-&gt; I)
+                                             (P\/Q) |- (~Q-&gt;P)
+---------------------------------------------------------------------------------------------------------------- (-&gt; I)
+                                            |- (P\/Q) -&gt; (~Q-&gt;P)
+</code></pre></td></tr></table></div>
+</div>
+</div><ol start="3">
+<li><strong>证明： 存在无理数 $p,\ q$ 使得 $p^q$ 是有理数</strong></li>
+</ol>
+<p>证明：令 $p = q = \sqrt{2}$，则 $p^q = (\sqrt{2})^{\sqrt{2}}$</p>
+<p>考虑下面两种情况：</p>
+<ol>
+<li>$(\sqrt{2})^{\sqrt{2}}$ 是有理数，证毕。</li>
+<li>$(\sqrt{2})^{\sqrt{2}}$ 是无理数，令 $p = (\sqrt{2})^{\sqrt{2}}, q = \sqrt{2}$，则 $p^q = ((\sqrt{2})^{\sqrt{2}})^{\sqrt{2}} = (\sqrt{2})^2 = 2$，证毕。</li>
+</ol>
+<p><strong>这是按照构造主义来证明的吗？谈谈你的看法</strong></p>
+<p>不是，构造主义要求必须找出具体的值来，而证明并没有构造一个值。</p>
+<ol start="4">
+<li><strong>存在命题 $$ F = \neg (p \to (q \wedge (\neg p \to q))) $$</strong></li>
+</ol>
+<p><em>消除蕴含式</em></p>
+<p>$$\begin{align*}
+C(F) &amp;= C(\neg (p \to (q \wedge (\neg p \to q)))) \\\<br>
+&amp;= \neg (C(p \to (q \wedge (\neg p \to q)))) \\\<br>
+&amp;= \neg (\neg C(p) \vee C(q \wedge (\neg p \to q))) \\\<br>
+&amp;= \neg (\neg p \vee (C(q) \wedge C(\neg p \to q))) \\\<br>
+&amp;= \neg (\neg p \vee (q \wedge (\neg C(\neg p) \vee C(q)))) \\\<br>
+&amp;= \neg (\neg p \vee (q \wedge (\neg \neg p \vee q)))
+\end{align*}$$</p>
+<p><em>转换为 NNF</em></p>
+<p>$$ F = \neg (\neg p \vee (q \wedge (\neg \neg p \vee q))) $$</p>
+<br/>
+<p>$$\begin{align*}
+C(F) &amp;= C(\neg (\neg p \vee (q \wedge (\neg \neg p \vee q)))) \\\<br>
+&amp;= C(\neg (\neg p)) \wedge C(\neg (q \wedge (\neg \neg p \vee q))) \\\<br>
+&amp;= p \wedge (C(\neg q) \vee C(\neg (\neg \neg p \vee q))) \\\<br>
+&amp;= p \wedge (\neg q \vee (C(\neg \neg \neg p) \wedge C(\neg q))) \\\<br>
+&amp;= p \wedge (\neg q \vee (\neg p \wedge \neg q))
+\end{align*}$$</p>
+<p><em>转换为 CNF</em></p>
+<p>$$ F = p \wedge (\neg q \vee (\neg p \wedge \neg q)) $$</p>
+<br/>
+<p>$$\begin{align*}
+C(F) &amp;= C(p \wedge (\neg q \vee (\neg p \wedge \neg q))) \\\<br>
+&amp;= C(p) \wedge C(\neg q \vee (\neg p \wedge \neg q)) \\\<br>
+&amp;= p \wedge (D(C(\neg q), C(\neg p \wedge \neg q))) \\\<br>
+&amp;= p \wedge (D(\neg q, C(\neg p \wedge \neg q))) \\\<br>
+&amp;= p \wedge (D(\neg q, \neg p \wedge \neg q)) \\\<br>
+&amp;= p \wedge (D(\neg q, \neg p) \wedge D(\neg q, \neg q)) \\\<br>
+&amp;= p \wedge (\neg q \vee \neg p) \wedge (\neg q \vee \neg q) \\\<br>
+&amp;= p \wedge (\neg q \vee \neg p) \wedge \neg q
+\end{align*}$$</p>
+<ol start="5">
+<li></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">DPLL</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">newF</span> <span class="o">=</span> <span class="n">BCP</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">newF</span> <span class="o">==</span> <span class="n">TRUE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sat</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">newF</span> <span class="o">==</span> <span class="n">FALSE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">unsat</span><span class="p">;</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">select_var</span><span class="p">(</span><span class="n">newF</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">DPLL</span><span class="p">(</span><span class="n">newF</span><span class="p">[</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">TRUE</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">sat</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">DPLL</span><span class="p">(</span><span class="n">newF</span><span class="p">[</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">FALSE</span><span class="p">])</span>
+<span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>The <code>BCP()</code> method stands for <strong>Boolean Constraint Propagation</strong>, which is based on unit resolution. Unit resolution deals with one unit clause, which must be p or ~p, and one clause contains the negation of the unit clause.</p>
+<p>Suppose we call the function <code>DPLL()</code> with the following proposition <code>F</code>:</p>
+<p>$$ F = (\neg p_1 \vee p_3) \wedge (\neg p_2 \vee p_3 \vee p_4) \wedge (p_1 \vee \neg p_3 \vee \neg p_4) \wedge (p_1) $$</p>
+<p><em>For the first recursive call, on line 2 of <code>DPLL()</code>, what's the value for <code>newF</code>?</em></p>
+<p>$$ newF = p_3 \wedge (\neg p_2 \vee p_3 \vee p_4)  $$</p>
+<p><em>For the first recursive call, which variable you'll choose at line 8 of the <code>DPLL()</code> function?</em></p>
+<blockquote>
+<p>选择了 $p_1$，因为 $p_1$ 在整个命题的最后子命题中作为原子命题存在。</p>
+</blockquote>
+<p><em>What's the final result for the function <code>DPLL()</code>? Is the proposition <code>F</code> satisfiable or not?</em></p>
+<blockquote>
+<p><code>DPLL</code>的最终结果代表 $F$ 是否有使其能够成立的取值。对于本题而言 $F$ 是可以满足的。</p>
+</blockquote>
+<ol start="6">
+<li></li>
+</ol>
+<ul>
+<li>
+<p>Alice 必须坐在一个凳子上：
+$$ A = (A_1 \wedge \neg A_2 \wedge \neg A_3) \vee (\neg A_1 \wedge A_2 \wedge \neg A_3) \vee (\neg A_1 \wedge \neg A_2 \wedge A_3)$$</p>
+</li>
+<li>
+<p>Bob 必须坐在一个凳子上：
+$$ B = (B_1 \wedge \neg B_2 \wedge \neg B_3) \vee (\neg B_1 \wedge B_2 \wedge \neg B_3) \vee (\neg B_1 \wedge \neg B_2 \wedge B_3)$$</p>
+</li>
+<li>
+<p>Carol 必须坐在一个凳子上：
+$$ C = (C_1 \wedge \neg C_2 \wedge \neg C_3) \vee (\neg C_1 \wedge C_2 \wedge \neg C_3) \vee (\neg C_1 \wedge \neg C_2 \wedge C_3)$$</p>
+</li>
+<li>
+<p>第一个椅子上只能坐一个人：
+$$ F_1 = (A_1 \wedge \neg B_1 \wedge \neg C_1) \vee (\neg A_1 \wedge B_1 \wedge \neg C_1) \vee (\neg A_1 \wedge \neg B_1 \wedge C_1) $$</p>
+</li>
+<li>
+<p>第二个椅子上坐一个人：
+$$ F_2 = (A_2 \wedge \neg B_2 \wedge \neg C_2) \vee (\neg A_2 \wedge B_2 \wedge \neg C_2) \vee (\neg A_2 \wedge \neg B_2 \wedge C_2) $$</p>
+</li>
+<li>
+<p>第三个椅子上只能坐一个人：
+$$ F_3 = (A_3 \wedge \neg B_3 \wedge \neg C_3) \vee (\neg A_3 \wedge B_3 \wedge \neg C_3) \vee (\neg A_3 \wedge \neg B_3 \wedge C_3) $$</p>
+</li>
+<li>
+<p>Alice 不能坐在 Carol 旁边：
+$$ F_4 = (A_1 \to \neg C_2) \wedge (A_2 \to \neg (C_1 \vee C_3)) \wedge (A_3 \to \neg C_2) $$</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注：</strong> 本答案假设1在最左边，3在最右边。  （左）1 ---- 2 ---- 3 （右）</p>
+</blockquote>
+<ul>
+<li>Bob不能坐在 Alice 右边：
+$$ F_5 = (B_1 \to \neg A_2) \wedge (B_1 \to \neg A_3) \wedge (B_2 \to \neg A_3) $$</li>
+</ul>
+<p>则有约束条件如下：</p>
+<p>$$ F = A \wedge B \wedge C \wedge F_1 \wedge F_2 \wedge F_3 \wedge F_4 \wedge F_5 $$</p>
+<ol start="7">
+<li></li>
+</ol>
+<p><strong>证明：$$ \forall x.(P(x) \to Q(x)) \vdash \forall x.(P(x)) \to \forall x.(Q(x)) $$</strong></p>
+<p><img src="/image/prove3.png" alt="prove3"></p>
+<ol start="8">
+<li></li>
+</ol>
+<p>$$ F = \exists x.(P(y, x) \wedge \forall y.(\neg Q(y, x)) \vee P(y, z)) $$</p>
+<ul>
+<li>自由变量： $ \lbrace y,\ z \rbrace $</li>
+<li>绑定变量： $ \lbrace x,\ y \rbrace $</li>
+</ul>
+<p>$$\begin{align*}
+F[y \mapsto x] &amp;= \exists x.(P(y, x) \wedge \forall y.(\neg Q(y, x)) \vee P(y, z)) [y \mapsto x] \\\<br>
+&amp;= \exists t.(P(y, t) \wedge \forall y.(\neg Q(y, t)) \vee P(y, z)) [y \mapsto x] \\\<br>
+&amp;= \exists t.(P(y, t) \wedge \forall s.(\neg Q(s, t)) \vee P(y, z)) [y \mapsto x] \\\<br>
+&amp;= \exists t.(P(x, t) \wedge \forall s.(\neg Q(s, t)) \vee P(x, z))
+\end{align*}$$</p>
+<p>考虑到 $x$ 是绑定变量，因此 $F[x \mapsto R(y, z)]$ 的结果应该保持不变。</p>
+<ol start="9">
+<li></li>
+</ol>
+<p>$$ a = c, b = d, a = e, d = h, f = g, g = e $$</p>
+<p><em>If we use the Union-Find algorithm to solve these qualities, what does the data structure look like? Please draw some sketches. (You don't need to write down the algorithm details.)</em></p>
+<p><img src="/image/q1.png" alt="q1"></p>
+<p><em>Suppose we add another equality</em></p>
+<p>$$e = d$$</p>
+<p><em>into this group, what does the data structure look like, after we use union-find algorithm to solve these equalities?</em></p>
+<p><img src="/image/q2.png" alt="q2"></p>
+<ol start="10">
+<li></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">calculate_a</span><span class="p">(</span><span class="kt">int</span> <span class="n">in_1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">in_2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">out_a_1</span> <span class="o">=</span> <span class="n">in_1</span> <span class="o">*</span> <span class="n">in_2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">out_a_2</span> <span class="o">=</span> <span class="n">in_1</span> <span class="o">+</span> <span class="n">in_2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">out_a</span> <span class="o">=</span> <span class="n">out_a_1</span> <span class="o">-</span> <span class="n">out_a_2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">out_a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">calculate_b</span><span class="p">(</span><span class="kt">int</span> <span class="n">in_1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">in_2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">out_b</span> <span class="o">=</span> <span class="p">(</span><span class="n">in_1</span> <span class="o">*</span> <span class="n">in_2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">in_1</span> <span class="o">+</span> <span class="n">in_2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">out_b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><em>Please describe the basic idea to prove these two algorithms are equivalent, by using <code>EUF</code> theory. Please write down the logical proposition <code>F</code> you need to prove.</em></p>
+<p>基本原则就是：证明对于任意的相同输入，两者产生相同的输出。由于输入的范围过大，无法构造证明，因此，只需要证明其反命题是不可满足的即可。</p>
+<p>$$ \begin{align*}
+F ::=\ \ \ &amp;(outa1 = f(in1, in2) \\\<br>
+\wedge \ &amp;outa2 = h(in1, in2) \\\<br>
+\wedge \ &amp;outa = g(outa1, outa2) \\\<br>
+\wedge \ &amp;g(f(in1, in2), h(in1, in2)) = outb) \to (outa = outb)
+\end{align*} $$</p>
+<blockquote>
+<p>$f$ 代表乘法操作， $h$ 代表加法操作， $g$ 代表减法操作。</p>
+</blockquote>
+<p><em>Bob wants to prove the above proposition <code>F</code>, by using the Z3 solver, the code he wrote looks like:</em></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">check</span><span class="p">())</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>这个代码无法证明两者等价。正确代码如下：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">solver</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">check</span><span class="p">())</span> 
+</code></pre></td></tr></table></div>
+</div>
+</div>
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://bamceil.github.io/" class="p-author h-card" target="_blank" rel="noopener">bamceil</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/formal-methods_middle-test1/" target="_blank" rel="noopener">https://bamceil.github.io/posts/formal-methods_middle-test1/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-07-18 14:33:23 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-07-18</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-07-18</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/formal-methods_final-test2/" class="related-link">形式化方法期末考试（2）2020 秋</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/formal-methods_7/" class="related-link">形式化方法（7）线性规划和线性算术</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/formal-methods_final-test1/" class="related-link">形式化方法期末考试（1）2019 春</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/formal-methods_6/" class="related-link">形式化方法（6）等式理论 EUF</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/formal-methods_5/" class="related-link">形式化方法（5）谓词逻辑</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>形式化方法</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/formal-methods_final-test1/" rel="prev">&lt; 形式化方法期末考试（1）2019 春</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/formal-methods_6/" rel="next">形式化方法（6）等式理论 EUF &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;bamceil</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+    <script>
+    if (typeof MathJax === 'undefined') {
+        window.MathJax = {
+            loader: {
+                load: ['[tex]/mhchem']
+            },
+            
+            tex: {
+                inlineMath: {'[+]': [['$', '$']]},
+                tags: 'ams',
+                packages: {'[+]': ['mhchem']}
+            }
+        };
+        (function() {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+            script.defer = true;
+            document.head.appendChild(script);
+        })();
+    } else {
+        MathJax.texReset();
+        MathJax.typeset();
+    }
+</script>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+    
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+
+
+    </body>
+</html>

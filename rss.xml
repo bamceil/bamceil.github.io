@@ -23,10 +23,643 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sat, 29 May 2021 14:45:31 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 18 Jul 2021 17:48:08 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://bamceil.github.io/rss.xml" />
         
+        
+            <item>
+                <title>形式化方法期末考试（2）2020 秋</title>
+                <link>https://bamceil.github.io/posts/formal-methods_final-test2/</link>
+                <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_final-test2/</guid>
+                <pubDate>Sun, 18 Jul 2021 14:35:00 &#43;0800</pubDate>
+                
+                    <author>bamceil@outlook.com (bamceil)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;ol&gt;
+&lt;li&gt;The Fourier-Motzkin variable elimination algorithm is a popular algorithm to solve equalities and inequalities. Here are some linear inequalities already normalized, where $ P_1(x), \cdots , P_{10}(x), Q_1(x), \cdots ,Q_{20}(x) $ and $ R_1(x), \cdots ,R_{724}(x) $ don’t contain the variable $x_1$:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Question: how many inequalities are there after eliminating the variable x1 by using Fourier-Motzkin variable elimination algorithm?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;10 * 20 + 724 = 924&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Given the following linear inequalities with two variables x, y and three constraints: $$ \begin{cases}
+2x - y \geq 1 \\\&lt;br&gt;
+x + y \geq 2 \\\&lt;br&gt;
+x + 2y \geq 3
+\end{cases} $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Question: calculate the solution of the inequalities above by using Simplex algorithm, please write down the table pivot procedures and result.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;整理成标准型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$ \begin{cases}
+2x - y = S_1 \\\&lt;br&gt;
+x + y = S_2 \\\&lt;br&gt;
+x + 2y = S_3 \\\&lt;br&gt;
+S_1 \geq 1 \\\&lt;br&gt;
+S_2 \geq 2 \\\&lt;br&gt;
+S_3 \geq 3
+\end{cases} $$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;造表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$x$&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$y$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_1$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_2$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_3$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;表里的内容是 $x$ 和 $y$ 的系数。&lt;/p&gt;
+&lt;p&gt;尝试将 $(x = 0, y = 0)$ 代入，发现 $S_1，S_2，S_3$ 均不满足条件。将 $S_2$ 和 $x$ 进行交换。这意味着：$x = S_2 - y$，代入$S_1，S_3$，整理得：$$ x = S_2 - y $$ $$ S_1 = 2S_2 - 3y $$ $$ S_3 = S_2 + y $$&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$S_2$&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$y$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$x$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_1$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_3$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;将 $(S_2 = 2, y = 0)$ 代入，发现 $S_1$ 满足条件，$S_3$ 不满足，将 $S_3$ 和 $y$ 交换。这意味着：$y = S_3 - S_2$，代入$S_1，x$，整理得：$$ x = 2S_2 - S_3 $$ $$ S_1 = 5S_2 - 3S_3 $$ $$ y = S_3 - S_2 $$&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$S_2$&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$S_3$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$x$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_1$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$y$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;将 $(S_2 = 2, S_3 = 3)$ 代入，发现 $S_1$ 满足条件，此时，$(x = 1, y = 1)$。解毕。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;题略&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How can Bob choose courses to meet the requirements of the school? Please write down the constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$P = d_1 + d_2 + d_8 \ge 1 \wedge \\\ d_5 + d_6 \ge 1 \wedge \\\ d_3 + d_4 + d_7 \ge 2 \wedge \\\ 3d_1 + 2d_2 + 4d_3 + 3d_4 + 4d_5 + 3d_6 + 4d_7 + 2d_8 \ge 15 $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To meet the requirements of the school, how should Bob choose courses so that the number of selected courses is minimized? Please write down the goal function.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ min(\sum_i d_i) $$&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;题略&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Are there any integer overflow bugs in the above code? If yes, please write down the line numbers and give one example to trigger these bugs. In Java, the integer is 32 bits, and it ranges from -2147483648 to 2147483647.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;存在溢出，第四行。例如，$L = 1, R = 2147483647 $&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If we change the fourth line of the code to &lt;code&gt;int mid = L + (R-L)/2;&lt;/code&gt; will there be bugs in the function mergeSort? If yes, please give one example to trigger these bugs and give the correct Java codes. If not, explain why.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;存在，比如 $ L = 10, R = -20 $&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;题略&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$ H(H(S(p))) = H(S(q)) \wedge H(H(S(q))) = S(x) \to H(H(H(H(S(p))))) = H(S(x)) $&lt;/li&gt;
+&lt;li&gt;$ H(R(p)) = R(q) \wedge H(R(q)) = S(x) \to H(H(H(R(p)))) = H(S(x)) $&lt;/li&gt;
+&lt;li&gt;$ H_i(R(p)) = R(q) \wedge H_i(R(q)) = S(x) \to H_i(H_a(H_a(R(p)))) = H_i(S(x)) $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;题略&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please describe the basic idea to prove these two algorithms are equivalent, by writing down the logical proposition F you need to prove which based on array and EUF theory.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ a_0 = store(a, 0, x) \wedge a_1 = store(a_0, 1, select(a_0, 0)) \wedge ret_1 = mul(select(a_1, 0), select(a_1, 1)) \wedge ret_2 = mul(x, x) \wedge ret_1 = ret_2 $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proposition about array theory can be transformed into the EUF theory, try to write down the proposition in EUF theory after the elimination.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ F^{\prime}_a(0) = x \wedge F^{\prime \prime}_a(1) = F^{\prime}_a(0) \wedge F^{\prime \prime}_a(0) = F^{\prime}_a(0) \wedge ret_1 = mul(F^{\prime \prime}_a(0), F^{\prime \prime}_a(1)) \wedge ret_2 = mul(x, x) \wedge ret_1 = ret_2 $$&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;题略&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Question: Use Nelson-Oppen algorithm to decide sat of formula F, write down the steps and result.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;整理后为：$$ (f(t_1) \ne f(z)) \wedge (t_1 = t_2 - t_3) \wedge (t_2 = f(x)) \wedge (t_3 = f(y)) \wedge (x \le y) \wedge (y + z \le x) \wedge (z \ge 0) $$&lt;/p&gt;
+&lt;p&gt;广播略，结果为&lt;code&gt;UNSAT&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;Consider the function f in C language:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Question: If we do the symbolic execution on the function f, how many paths it will generate? Describe the symbolic memory and path conditions for every path.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3条&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;构建一个模型，使得&lt;code&gt;lib&lt;/code&gt;函数也能够利用模型来模拟。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/">数学</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>形式化方法（7）线性规划和线性算术</title>
+                <link>https://bamceil.github.io/posts/formal-methods_7/</link>
+                <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_7/</guid>
+                <pubDate>Sat, 19 Jun 2021 14:55:40 &#43;0800</pubDate>
+                
+                    <author>bamceil@outlook.com (bamceil)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;线性规划(Linear Programming) 是运筹学中发展较早且较为成熟的分支。&lt;/p&gt;
+&lt;p&gt;运筹学主要研究的问题是：在受限的资源条件下的最优化问题。&lt;/p&gt;
+&lt;p&gt;因此，线性规划的目的也是解决最优化的问题。&lt;/p&gt;
+&lt;p&gt;线性规划和线性算术往往是分不开的，因为求解问题是需要进行计算的，这个过程就是线性算术。&lt;/p&gt;
+&lt;h2 id=&#34;语法&#34;&gt;语法&lt;/h2&gt;
+&lt;p&gt;$$ \begin{align*} A &amp;amp;::= x \ | \ c \ | \ c * x \\\&lt;br&gt;
+E &amp;amp;::= A \ | \ A + E  \\\&lt;br&gt;
+R &amp;amp;::= E = E \ | \ E \leq E \ | \ E &amp;lt; E \\\&lt;br&gt;
+P &amp;amp;::= R \ | \ P \wedge P
+\end{align*} $$&lt;/p&gt;
+&lt;p&gt;$ Ex. $&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y = 0.8 \\\&lt;br&gt;
+x - y = 0.2
+\end{cases}  $$&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y \geq 0.8 \\\&lt;br&gt;
+x - y \geq 0.2
+\end{cases}  $$&lt;/p&gt;
+&lt;p&gt;这里使用大括号来代替 $\wedge$ 符号&lt;/p&gt;
+&lt;p&gt;上面的问题可以转化为 &lt;code&gt;SAT&lt;/code&gt; 问题，例如：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y \geq 0.8 \\\&lt;br&gt;
+x - y \geq 0.2
+\end{cases}  $$&lt;/p&gt;
+&lt;p&gt;等价于构造两个命题，$P_1 = x + y \geq 0.8，P_2 = x - y \geq 0.2$ 然后求 $P = P_1 \wedge P_2$ 是否可以满足。&lt;/p&gt;
+&lt;p&gt;有意思的是：该问题的时间复杂度取决于我们讨论的数域。&lt;/p&gt;
+&lt;p&gt;如果我们在有理数集合上求解，也就是说 $x \in \mathbb{Q}, y \in \mathbb{Q}$ 则是多项式时间复杂度。&lt;/p&gt;
+&lt;p&gt;反过来，如果在整数集合上求解，也就是说 $x \in \mathbb{Z}, y \in \mathbb{Z}$ 则该问题是&lt;code&gt;NPC&lt;/code&gt;问题。&lt;/p&gt;
+&lt;p&gt;下面是一些算法的适用范围：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;傅里叶消去法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;单纯形法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;分支定界法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Omega&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\mathbb{Q}$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\mathbb{Q}$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\mathbb{Z}$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\mathbb{Z}$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;傅里叶消去法&#34;&gt;傅里叶消去法&lt;/h2&gt;
+&lt;p&gt;对于下列问题&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y = 0.8 \\\&lt;br&gt;
+x - y = 0.2
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;将两个式子相加，有&lt;/p&gt;
+&lt;p&gt;$$ 2x = 1.0 $$&lt;/p&gt;
+&lt;p&gt;也就是&lt;/p&gt;
+&lt;p&gt;$$ x = 0.5 $$&lt;/p&gt;
+&lt;p&gt;可以得到 $$ x = 0.5, \quad y = 0.3 $$&lt;/p&gt;
+&lt;p&gt;这种方法叫做&lt;strong&gt;高斯消元法&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;核心的要点就是要尽可能多的&lt;strong&gt;减少变量个数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;将其拓展到不等式上：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y \geq 0.8 \\\&lt;br&gt;
+x - y \geq 0.2
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;我们仍然可以和往常一样化简，消除多余元素，最后得到结果：&lt;/p&gt;
+&lt;p&gt;$$ x \geq 0.5 $$&lt;/p&gt;
+&lt;p&gt;也就是说，我们可以得到 $ x = 0.5, \quad y = 0.3 $ 的解。&lt;/p&gt;
+&lt;p&gt;考虑另一个无解的问题：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y \geq 0.8 \\\&lt;br&gt;
+x + 5y \geq 0.2 \\\&lt;br&gt;
+x + 3y \leq 0
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;首先，将 $ \leq $ 转换为 $ \geq $，然后化简，得到：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+y \leq -0.4 \\\&lt;br&gt;
+y \geq 0.1
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;显然无解。&lt;/p&gt;
+&lt;h3 id=&#34;算法&#34;&gt;算法&lt;/h3&gt;
+&lt;p&gt;在这些问题中，采取的方式都是不断消除掉多余的变量，直到整个问题可解。
+因此，我们可以得到一般化的方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将所有的不等式正规化（也就是变成 $\geq 0$ 形式），然后找到任意的 $x_i$，其形式既有 $-x_i$ 又有 $x_i$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ \begin{cases}
+x_i + P_1(x) \geq 0 \\\&lt;br&gt;
+\dots \\\&lt;br&gt;
+x_i + P_m(x) \geq 0 \\\&lt;br&gt;
+-x_i + Q_1(x) \geq 0 \\\&lt;br&gt;
+\dots \\\&lt;br&gt;
+-x_i + Q_n(x) \geq 0 \\\&lt;br&gt;
+R(x) \geq 0
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;消除掉 $x_i$&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;得到的结果简化为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$\begin{cases}
+P_1(x) + Q_1(x) \geq 0 \\\&lt;br&gt;
+\dots \\\&lt;br&gt;
+P_1(x) + Q_n(x) \geq 0 \\\&lt;br&gt;
+P_2(x) + Q_1(x) \geq 0 \\\&lt;br&gt;
+\dots \\\&lt;br&gt;
+P_2(x) + Q_n(x) \geq 0 \\\&lt;br&gt;
+\dots \\\&lt;br&gt;
+P_m(x) + Q_1(x) \geq 0 \\\&lt;br&gt;
+\dots \\\&lt;br&gt;
+P_m(x) + Q_n(x) \geq 0 \\\&lt;br&gt;
+R(x) \geq 0
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;检查结果是否是 &lt;code&gt;SAT&lt;/code&gt; 或者 &lt;code&gt;UNSAT&lt;/code&gt;，若不是，返回第一步，继续消除掉其他的变量。&lt;/p&gt;
+&lt;p&gt;复杂度为 $O(2^n)$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果某个变量的系数全部为正或者全部为负，那么可以将含有该变量的式子直接消去。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;单纯形法&#34;&gt;单纯形法&lt;/h2&gt;
+&lt;p&gt;在几何上，上面有解的问题一定都在坐标系上围成了一个空间，该空间上的任何一点均满足条件。所以如果能够快速的在其空间上找到一个点，那么算法就可以停止。&lt;/p&gt;
+&lt;p&gt;下面以一个例子来介绍单纯形法。&lt;/p&gt;
+&lt;p&gt;$Ex$&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y \geq 2 \\\&lt;br&gt;
+2x - y \geq 0 \\\&lt;br&gt;
+-x + 2y \geq 1
+\end{cases} $$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;整理成标准型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y = S_1 \\\&lt;br&gt;
+2x - y = S_2 \\\&lt;br&gt;
+-x + 2y = S_3 \\\&lt;br&gt;
+S_1 \geq 2 \\\&lt;br&gt;
+S_2 \geq 0 \\\&lt;br&gt;
+S_3 \geq 1
+\end{cases} $$&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;造表&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$x$&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$y$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_1$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_2$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_3$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;表里的内容是 $x$ 和 $y$ 的系数。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;尝试将 $(x = 0, y = 0)$ 代入，发现 $S_2$ 满足条件，$S_1，S_3$ 均不满足。将 $S_1$ 和 $x$ 进行交换。这意味着：$x = S_1 - y$，代入$S_2，S_3$，整理得：$$ x = S_1 - y $$ $$ S_2 = 2S_1 - 3y $$ $$ S_3 = -S_1 + 3y $$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$S_1$&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$y$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$x$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_2$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_3$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;将 $(S_1 = 2, y = 0)$ 代入，发现 $S_2$ 满足条件，$S_3$ 不满足，将 $S_3$ 和 $y$ 交换。这意味着：$S_3 = -S_1 + 3y \Rightarrow y = \frac{1}{3}S_1 + \frac{1}{3}S_3$，代入$S_2，x$，整理得：$$ x = \frac{2}{3} S_1 - \frac{1}{3}S_3 $$ $$ S_2 = S_1 - S_3 $$ $$ y = \frac{1}{3}S_1 + \frac{1}{3}S_3 $$&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$S_1$&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;$S_3$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$x$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\frac{2}{3}$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$-\frac{1}{3}$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$S_2$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$y$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\frac{1}{3}$&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;$\frac{1}{3}$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;将 $(S_1 = 2, S_3 = 1)$ 代入，发现 $S_2$ 满足条件，此时，$(x = 1, y = 1)$。解毕。&lt;/p&gt;
+&lt;h3 id=&#34;算法-1&#34;&gt;算法&lt;/h3&gt;
+&lt;p&gt;用伪代码表述该算法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;simplex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;tab&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;constructTableau&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;additional&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;si&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;violates&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;its&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;constraint&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;there&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;suitable&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;xj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;si&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;xj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UNSAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;几何意义&#34;&gt;几何意义&lt;/h3&gt;
+&lt;p&gt;直观的理解一下单纯形法。对于每一次交换，实际上都做了一次换轴，也就是将因变量换成了自变量。根据自变量的性质，那么我们总是可以将自变量设置为某一个固定值，这也就是在原方程上引入 $S_i$ 的作用，它将其转换为自变量来满足它的范围要求，这将导致我们减少了一个变量，通过不断地重复，直至方程可解或不可解。&lt;/p&gt;
+&lt;p&gt;在几何上，也就是通过不断地试探来逼近答案的过程，下图展示了它的求解过程。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bamceil.github.io/image/q3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ilp&#34;&gt;ILP&lt;/h2&gt;
+&lt;p&gt;和线性规划一样，只不过它的求解范围缩小到了整数域 $\mathbb{Z}$ 上。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+x + y \geq 2 \\\&lt;br&gt;
+2x - y \geq 0 \\\&lt;br&gt;
+-x + 2y \geq 1
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;其中，$ x, y \in \mathbb{Z} $&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一个 &lt;code&gt;NPC&lt;/code&gt; 问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;分支-定界法-bb&#34;&gt;分支-定界法 B&amp;amp;B&lt;/h3&gt;
+&lt;p&gt;分支定界法也是和上述方法一样的求解方法。只不过，它的适用范围缩小到了整数域 $\mathbb{Z}$ 上。&lt;/p&gt;
+&lt;p&gt;它的主要思想是：通过放松条件，首先在实数域上求解，如果在实数域上无解，那么必然在整数域上也无解。如果在实数域上有解，分两类情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果解本身就是整数，那么直接结束。&lt;/li&gt;
+&lt;li&gt;如果解不是整数，那么假设解为 $x = (C_1, C_2,\ \dots, C_n), \quad C_i \in \mathbb{R}$
+&lt;ul&gt;
+&lt;li&gt;观察 $C_i$ 是否是整数，若是，继续到 $C_{i+1}$&lt;/li&gt;
+&lt;li&gt;否则，求解下列两个式子：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$ \begin{cases}
+A \vec x \geq \vec b \\\&lt;br&gt;
+x_i \leq \lfloor C_i \rfloor
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+A \vec x \geq \vec b \\\&lt;br&gt;
+x_i \geq \lfloor C_i \rfloor
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;伪代码描述：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;branchBound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;simplex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UNSAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// prune
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UNSAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;are&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;integers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SAT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// deep return
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;c0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;real&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;branchBound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;U&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;branchBound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;U&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;应用&#34;&gt;应用&lt;/h2&gt;
+&lt;p&gt;有很多问题可以被转化为线性规划问题，进而通过线性算术约束求解。&lt;/p&gt;
+&lt;h3 id=&#34;子集求和&#34;&gt;子集求和&lt;/h3&gt;
+&lt;p&gt;对于集合 $S = \lbrace S_1, S_2, \ \dots, S_n \rbrace$，如何找到这里面的和为0的元素呢？&lt;/p&gt;
+&lt;p&gt;我们可以引入一个辅助变量 $X = \lbrace X_1, X_2, \ \dots, X_n \rbrace$，其中 $X_i \in \lbrace 0, 1 \rbrace .$&lt;/p&gt;
+&lt;p&gt;其中，$X_i = 1$ 表示我们选择元素 $S_i$，否则我们不选择 $S_i$&lt;/p&gt;
+&lt;p&gt;那么我们有下列的约束条件：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+\sum\limits_{i} S_i X_i = 0 \\\&lt;br&gt;
+\sum\limits_{i} X_i &amp;gt; 0
+\end{cases} $$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注&lt;/strong&gt;：$\sum\limits_{i} X_i &amp;gt; 0$ 的条件是为了防止选择出了空集合。&lt;/p&gt;
+&lt;p&gt;最后我们求解的实际上是 $X$ 的值。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这实际上一个 &lt;code&gt;ILP&lt;/code&gt; 问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;0-1背包&#34;&gt;0-1背包&lt;/h3&gt;
+&lt;p&gt;每个物品的重量 $W = \lbrace W_1, W_2, \ \dots, W_n \rbrace$&lt;/p&gt;
+&lt;p&gt;每个物品的价值 $V = \lbrace V_1, V_2, \ \dots, V_n \rbrace$&lt;/p&gt;
+&lt;p&gt;背包总容量为 $w$&lt;/p&gt;
+&lt;p&gt;和上述问题一样，我们同样引入一个变量 $X = \lbrace X_1, X_2, \ \dots, X_n \rbrace$，其中 $X_i \in \lbrace 0, 1 \rbrace .$&lt;/p&gt;
+&lt;p&gt;其中，$X_i = 1$ 表示我们选择物品 $i$，否则我们不选择 $i$&lt;/p&gt;
+&lt;p&gt;那么有下列约束条件：&lt;/p&gt;
+&lt;p&gt;$$ \begin{cases}
+\sum\limits_{i} W_i X_i \leq w \\\&lt;br&gt;
+max(\sum\limits_{i} V_i X_i)
+\end{cases} $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们要使用 max 来保证选择的物品价值最高&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://bamceil.github.io/categories/%E6%95%B0%E5%AD%A6/">数学</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://bamceil.github.io/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>形式化方法期末考试（1）2019 春</title>
@@ -252,8 +885,8 @@ F_3 &amp;amp;= F_1 \wedge \neg D
         
             <item>
                 <title>形式化方法期中考试（1）2020 秋</title>
-                <link>https://bamceil.github.io/posts/formal-methods_middle-test/</link>
-                <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_middle-test/</guid>
+                <link>https://bamceil.github.io/posts/formal-methods_middle-test1/</link>
+                <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_middle-test1/</guid>
                 <pubDate>Wed, 26 May 2021 15:23:16 &#43;0800</pubDate>
                 
                     <author>bamceil@outlook.com (bamceil)</author>
@@ -579,7 +1212,7 @@ F ::=\ \ \ &amp;amp;(outa1 = f(in1, in2) \\\&lt;br&gt;
             </item>
         
             <item>
-                <title>形式化方法（6）</title>
+                <title>形式化方法（6）等式理论 EUF</title>
                 <link>https://bamceil.github.io/posts/formal-methods_6/</link>
                 <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_6/</guid>
                 <pubDate>Tue, 25 May 2021 18:33:16 &#43;0800</pubDate>
@@ -830,7 +1463,7 @@ Q ::=\ \ \ &amp;amp;P \to (outa2 = outb)
             </item>
         
             <item>
-                <title>形式化方法（5）</title>
+                <title>形式化方法（5）谓词逻辑</title>
                 <link>https://bamceil.github.io/posts/formal-methods_5/</link>
                 <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_5/</guid>
                 <pubDate>Sun, 23 May 2021 16:55:36 &#43;0800</pubDate>
@@ -852,7 +1485,8 @@ Q ::=\ \ \ &amp;amp;P \to (outa2 = outb)
 &lt;h2 id=&#34;文法&#34;&gt;文法&lt;/h2&gt;
 &lt;p&gt;$$ \begin{align*} E &amp;amp;::= X \ | \ C \ | \ f(E, \ ..., \ E) \\\ \\&lt;br&gt;
 R &amp;amp;::= r(E, \ ..., \ E) \\\ \\&lt;br&gt;
-P &amp;amp;::= R \ | \ \top \ | \ \bot \ | \ P \vee P \ | \ P \wedge P \ | \ P \to P \ | \ \neg P \ | \ \forall x. P \ | \ \exists x. P \end{align*} $$&lt;/p&gt;
+P &amp;amp;::= R \ | \ \top \ | \ \bot \ | \ P \vee P \ | \ P \wedge P \ | \ P \to P \ | \ \neg P \ | \ \forall x. P \ | \ \exists x. P
+\end{align*} $$&lt;/p&gt;
 &lt;p&gt;其中，$X$ 表示一系列的变量，$C$ 表示一系列的常量，$f$ 代表一系列的函数映射 $r$ 代表关系运算。&lt;/p&gt;
 &lt;p&gt;$Ex1. \quad r(f_1(x_1, x_2), f_2(x_3, x_4))$&lt;/p&gt;
 &lt;p&gt;该表达式符合文法，是合法的谓词逻辑。&lt;/p&gt;
@@ -1056,7 +1690,7 @@ F[y \mapsto x] &amp;amp;= (\exists x.\ (P(y,\ x) \wedge \forall y.\ (\neg Q(y,\ 
             </item>
         
             <item>
-                <title>形式化方法（4）</title>
+                <title>形式化方法（4）可满足性问题(SAT)</title>
                 <link>https://bamceil.github.io/posts/formal-methods_4/</link>
                 <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_4/</guid>
                 <pubDate>Sat, 22 May 2021 19:47:55 &#43;0800</pubDate>
@@ -1270,7 +1904,7 @@ $$ (B_1 \to \neg A_2) \wedge (B_1 \to \neg A_3) \wedge (B_2 \to \neg A_3) $$&lt;
             </item>
         
             <item>
-                <title>形式化方法（3）</title>
+                <title>形式化方法（3）命题逻辑</title>
                 <link>https://bamceil.github.io/posts/formal-methods_3/</link>
                 <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_3/</guid>
                 <pubDate>Fri, 21 May 2021 18:55:20 &#43;0800</pubDate>
@@ -1580,7 +2214,7 @@ F
             </item>
         
             <item>
-                <title>形式化方法（2）</title>
+                <title>形式化方法（2）形式语言与自动机</title>
                 <link>https://bamceil.github.io/posts/formal-methods_2/</link>
                 <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_2/</guid>
                 <pubDate>Thu, 20 May 2021 19:37:43 &#43;0800</pubDate>
@@ -1733,7 +2367,7 @@ $$ G \quad = \quad  &amp;lt;N, \ T, \ P, \ S&amp;gt; $$ $$ N \to \lbrace A, \ B,
             </item>
         
             <item>
-                <title>形式化方法（1）</title>
+                <title>形式化方法（1）简介及历史</title>
                 <link>https://bamceil.github.io/posts/formal-methods_1/</link>
                 <guid isPermaLink="true">https://bamceil.github.io/posts/formal-methods_1/</guid>
                 <pubDate>Thu, 20 May 2021 16:57:50 &#43;0800</pubDate>
