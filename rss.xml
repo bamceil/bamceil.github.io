@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sun, 18 Jul 2021 17:52:01 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 18 Jul 2021 18:10:43 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://bamceil.github.io/rss.xml" />
         
@@ -189,11 +189,11 @@ S_3 \geq 3
 &lt;blockquote&gt;
 &lt;p&gt;Please describe the basic idea to prove these two algorithms are equivalent, by writing down the logical proposition F you need to prove which based on array and EUF theory.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;$$ a_0 = store(a, 0, x) \wedge a_1 = store(a_0, 1, select(a_0, 0)) \wedge ret_1 = mul(select(a_1, 0), select(a_1, 1)) \wedge ret_2 = mul(x, x) \wedge ret_1 = ret_2 $$&lt;/p&gt;
+&lt;p&gt;$$ a_0 = store(a, 0, x) \wedge a_1 = store(a_0, 1, select(a_0, 0)) \wedge ret_1 = mul(select(a_1, 0), select(a_1, 1)) \wedge ret_2 = mul(x, x) \to ret_1 = ret_2 $$&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Proposition about array theory can be transformed into the EUF theory, try to write down the proposition in EUF theory after the elimination.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;$$ F^{\prime}_a(0) = x \wedge F^{\prime \prime}_a(1) = F^{\prime}_a(0) \wedge F^{\prime \prime}_a(0) = F^{\prime}_a(0) \wedge ret_1 = mul(F^{\prime \prime}_a(0), F^{\prime \prime}_a(1)) \wedge ret_2 = mul(x, x) \wedge ret_1 = ret_2 $$&lt;/p&gt;
+&lt;p&gt;$$ F^{\prime}_a(0) = x \wedge F^{\prime \prime}_a(1) = F^{\prime}_a(0) \wedge F^{\prime \prime}_a(0) = F^{\prime}_a(0) \wedge ret_1 = mul(F^{\prime \prime}_a(0), F^{\prime \prime}_a(1)) \wedge ret_2 = mul(x, x) \to ret_1 = ret_2 $$&lt;/p&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;题略&lt;/li&gt;
 &lt;/ol&gt;
