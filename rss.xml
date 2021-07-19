@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 19 Jul 2021 13:38:47 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 19 Jul 2021 13:48:47 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://bamceil.github.io/rss.xml" />
         
@@ -230,8 +230,12 @@ S_3 \geq 3
 &lt;p&gt;整理后为：$$ (f(t_1) \ne f(z)) \wedge (t_1 = t_2 - t_3) \wedge (t_2 = f(x)) \wedge (t_3 = f(y)) \wedge (x \le y) \wedge (y + z \le x) \wedge (z \ge 0) $$&lt;/p&gt;
 &lt;p&gt;广播略，结果为&lt;code&gt;UNSAT&lt;/code&gt;&lt;/p&gt;
 &lt;ol start=&#34;8&#34;&gt;
-&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;题略。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Question: Use DPLL(T) algorithm to decide sat of the formula F, write down the steps and result.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;答案实在是太麻烦了，自行参考PPT吧。&lt;/p&gt;
 &lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;Consider the function f in C language:&lt;/li&gt;
 &lt;/ol&gt;
@@ -264,14 +268,19 @@ S_3 \geq 3
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Question: If we do the symbolic execution on the function f, how many paths it will generate? Describe the symbolic memory and path conditions for every path.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;3条&lt;/p&gt;
+&lt;p&gt;3条. 参考PPT画图。&lt;/p&gt;
 &lt;ol start=&#34;10&#34;&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;构建一个模型，使得&lt;code&gt;lib&lt;/code&gt;函数也能够利用模型来模拟。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How can we deal with the function lib() if we want to do symbolic execution on the function f? How does concolic execution handle this problem?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在符号执行中构建一个模型，使得&lt;code&gt;lib&lt;/code&gt;函数也能够利用模型来模拟。
+concolic中，由于存在输入的值，因此可以直接执行。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Suppose we do the concolic execution on the function f. Write down the path conditions the concolic execution engine will generate with the input: $$ x = -2, y = 3 $$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个也很麻烦，溜了。&lt;/p&gt;
 </description>
                 
                 
